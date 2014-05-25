@@ -12,7 +12,7 @@ Get Started
 You are going to need Node.js and Express as the corner stones, as well as a bunch of useful modules.
 
 1. Download and install Node.js in whatever way suits you best:
-  * Go to the [project site](http://nodejs.org), download an installer and run it
+  * Go to the [project site](http://nodejs.org), download an installer and run it OR
   * on Mac OS / Linux run `brew install node`
 2. Install Express by running `npm install -g express`. Should you hit failures just run the same command using `sudo`
 3. To be able to generate the app you also have to install a module called express-generator, hence: `npm install -g express-generator`
