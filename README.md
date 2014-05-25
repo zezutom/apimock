@@ -15,7 +15,8 @@ You are going to need Node.js and Express as the corner stones, as well as a bun
   * Go to the [project site](http://nodejs.org), download an installer and run it OR
   * on Mac OS / Linux run `brew install node`
 2. Install Express by running `npm install -g express`. Should you hit failures just run the same command using `sudo`
-3. To be able to generate the app you also have to install a module called express-generator, hence: `npm install -g express-generator`
+3. To be able to generate the app you also have to install a module called express-generator: 
+  * `npm install -g express-generator`
 4. Go to the install directory `cd apimock` and install (locally! i.e. without the `-g` option) a module called glob: `npm install glob`
 
 Usage
