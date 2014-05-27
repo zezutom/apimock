@@ -35,6 +35,7 @@ In the web browser go to `http://127.0.0.1:8080`
   * The page will complain there is no mapping for '/', but that's okay
 
 Test it out! Use the example data to verify the saved responses have been correctly mapped:
-  * `http://127.0.0.1:8080/api/customers`
-  * `http://127.0.0.1:8080/api/friends`
+  * `http://127.0.0.1:8080/api/links`
+  * `http://127.0.0.1:8080/api/posts`
+  * `http://127.0.0.1:8080/api/photos/1`
 
