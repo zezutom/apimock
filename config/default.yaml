@@ -1,0 +1,9 @@
+Server:
+  host: localhost
+  port: 8080
+
+Routes:
+  source: "/test/mocks/api"
+  target: "/api"
+  suffix: .json
+  type: application/json 

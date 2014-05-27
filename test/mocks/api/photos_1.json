@@ -1,0 +1,7 @@
+{
+  "photos": [{
+    "id": "1",
+    "title": "Productivity",
+    "src": "http://example.com/productivity.png"
+  }]
+}
