@@ -1,0 +1,15 @@
+{
+    "Server": {
+        "host": "localhost",
+        "port": 8080
+    },
+    "Routes": [
+        {
+            "url": "http://myserver.com",
+            "source": "/test/mocks/api",
+            "target": "/api",
+            "suffix": ".xml",
+            "type": "application/xml"
+        }
+    ]
+}
