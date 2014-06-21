@@ -2,7 +2,7 @@
 var server = require("config").Server;
 var logger = require("morgan");
 var express = require("express");
-var record = require("./modules/record2");
+var record = require("./modules/record");
 
 // Instantiate a web server
 var app = express();

@@ -2,19 +2,17 @@ var url = require("url");
 var path = require("path");
 var fs = require("fs");
 var querystring = require('querystring');
-var webutils = require("./webutils");
+var webutils = require("./utils/web");
+var utils = require("./utils/common");
 
 module.exports = function (req, options) {
-    options = options || {};
-    var root = options.root || "/";
-    var dest = root + options.dest;
+    options = utils.conf(options);
+    var target = utils.conf(options.target);
+    var root = utils.conf(target.root, "/");
+    var dest = root + utils.conf(target.dest, "");
     var uri = querystring.escape(url.parse(req.url).path);
-    var filename = path.join(dest, uri + options.suffix);
-
-    var web = webutils({
-        type: options.type,
-        url: options.url
-    });
+    var filename = path.join(dest, uri + utils.conf(target.suffix, ""));
+    var web = webutils(options.source);
 
     return {
         read: function(res) {

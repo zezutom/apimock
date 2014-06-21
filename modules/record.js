@@ -1,47 +1,35 @@
 var routes = require("config").Routes;
-var fs = require("fs");
-var glob = require("glob");
+var request = require('request');
 var _ = require('underscore');
+var cache = require("./cache");
 
 module.exports = function (app, options) {
     options = options || {};
-    var appRoot = options.root || "/";
 
     return {
-        init: function () {
-            console.log("App root dir: [%s]", appRoot);
+        init: function() {
             var me = this;
             _.each(routes, function(route) {
                 me.map(route);
             });
         },
-        // Maps already saved responses to http requests
         map: function(route) {
-            var mockRoot = appRoot + route.source;
-            var searchPattern = mockRoot + "/**/*" + route.suffix;
-            var files = glob.sync(searchPattern);
-
-            if (files && files.length > 0) {
-                files.forEach(function(fileName) {
-                    var mapping =  route.target + fileName
-                        .replace(mockRoot, "")
-                        .replace(route.suffix, "")
-                        .replace(/_/g, "/");
-
-                    app.get(mapping, function(req, res) {
-                        var data = fs.readFileSync(fileName, "utf8");
-                        res.writeHead(200, {"Content-Type": route.type});
-                        res.write(data);
-                        res.end();
-                    });
-                    console.log("Registered mapping: %s -> %s", mapping, fileName);
+            app.get(route.target, function(req, res) {
+                var cacher = cache(req, {
+                    source: {
+                        type: route.type,
+                        url: route.url + req._parsedUrl.search,
+                        method: req.method
+                    },
+                    target: {
+                        root: options.root,
+                        dest: route.source,
+                        suffix: route.suffix
+                    }
                 });
-            } else {
-                console.log("No mappings found! Please check the configuration.");
-            }
-        },
-        // TODO
-        play: function () {
+
+                cacher.read(res);
+            });
         }
     }
-};
+}
