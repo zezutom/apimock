@@ -14,19 +14,21 @@ module.exports = function (options) {
         },
         error: function(res, err) {
             // TODO
-            console.log("error: " + error);
+            console.log("error: " + err);
         },
-        request: function(res, cacher) {
+        request: function(res, cacher, callback) {
             var that = this;
             request({url: options.url,
-                     method: options.method,
+                     method: options.method || "GET",
                      timeout: server.timeout},
                 function (error, response, body) {
                     if (!error && response.statusCode == 200) {
                         that.success(res, body);
                         cacher.write(body);
+                        callback();
                     } else {
                         that.error(res, error);
+                        callback(error);
                     }
             });
         }

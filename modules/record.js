@@ -15,7 +15,7 @@ module.exports = function (app, options) {
         },
         map: function(route) {
             app.get(route.target, function(req, res) {
-                var cacher = cache(req, {
+                var cacher = cache({
                     source: {
                         type: route.type,
                         url: route.url + req._parsedUrl.search,
@@ -25,7 +25,8 @@ module.exports = function (app, options) {
                         root: options.root,
                         dest: route.source,
                         suffix: route.suffix
-                    }
+                    },
+                    url: req.url
                 });
 
                 cacher.read(res);
