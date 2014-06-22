@@ -2,13 +2,13 @@ var server = require("config").Server;
 var request = require("request");
 var utils = require("./common");
 
-module.exports = function (options) {
+module.exports = function (cacher, res, options, callback) {
     options = utils.conf(options);
     var contentType = utils.conf(options.type, "application/json");
 
     return {
-        success: function(res, body) {
-            res.writeHead(200, {"Content-Type": contentType});
+        success: function(res, body, code) {
+            res.writeHead(code || 200, {"Content-Type": contentType});
             res.write(body);
             res.end();
         },
@@ -16,21 +16,21 @@ module.exports = function (options) {
             // TODO
             console.log("error: " + err);
         },
-        request: function(res, cacher, callback) {
-            var that = this;
-            request({url: options.url,
-                     method: options.method || "GET",
-                     timeout: server.timeout},
-                function (error, response, body) {
-                    if (!error && response.statusCode == 200) {
-                        that.success(res, body);
-                        cacher.write(body);
-                        callback();
-                    } else {
-                        that.error(res, error);
-                        callback(error);
-                    }
-            });
+        get: function() {
+            request({url: options.url, timeout: server.timeout}, this._handleResponse.bind(this));
+        },
+        post: function() {
+            request.post(options.url, {form: options.form}, this._handleResponse.bind(this));
+        },
+        _handleResponse: function(error, response, body) {
+            if (!error && response.statusCode == 200 || response.statusCode == 201) {
+                this.success(res, body, response.statusCode);
+                cacher.write(body);
+                if (callback) callback();
+            } else {
+                this.error(res, error);
+                if (callback) callback(error);
+            }
         }
     }
 }

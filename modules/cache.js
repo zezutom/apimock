@@ -12,14 +12,14 @@ module.exports = function (options) {
     var dest = root + utils.conf(target.dest, "");
     var uri = querystring.escape(url.parse(options.url).path);
     var filename = path.join(dest, uri + utils.conf(target.suffix, ""));
-    var web = webutils(options.source);
+    var isGet = utils.conf(options.method, "GET").toUpperCase() === "GET";
 
     return {
         read: function(res) {
-            var that = this;
+            var web = webutils(this, res, options.source);
             fs.readFile(filename, function(err, file) {
                 if (err) {
-                   web.request(res, that);
+                    (isGet) ? web.get() : web.post();
                 } else {
                     web.success(res, file);
                 }

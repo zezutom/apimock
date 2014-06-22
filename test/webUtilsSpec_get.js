@@ -8,14 +8,14 @@ var cache = require("../modules/cache");
 
 describe("WebUtils", function() {
 
-    describe("#request()", function() {
+    describe("#get()", function() {
 
         var res, cacher, web, filename;
 
         before(function(done) {
 
-            nock('http://myapp.com')
-                .get('/users/1')
+            nock("http://myapp.com")
+                .get("/users/1")
                 .reply(200, JSON.stringify({id: "1", username: "test", email: "test@gmail.com"}));
 
             filename = __dirname.replace(/\\/g,"/") +
@@ -24,8 +24,7 @@ describe("WebUtils", function() {
             cacher = cache({
                 source: {
                     type: "application/json",
-                    url: "http://myapp.com/users/1",
-                    method: "GET"
+                    url: "http://myapp.com/users/1"
                 },
                 target: {
                     root:__dirname.replace(/\\/g,"/"),
@@ -37,25 +36,26 @@ describe("WebUtils", function() {
 
             res = httpmock.createResponse({encoding: "utf8"});
 
-            web = webutils({type: "application/json",
-                            url: "http://myapp.com/users/1",
-                            method: "GET"});
+            web = webutils(cacher, res,
+                {type: "application/json", url: "http://myapp.com/users/1"},
+                function(err) {
+                    if (err) throw err;
+                    done();
+                }
+            );
 
-            web.request(res, cacher, function(err) {
-                if (err) throw err;
-                done();
-            });
+            web.get();
         });
 
         after(function(done) {
             fs.unlink(filename, function(err) {
                 if (err) throw err;
-                console.log("Successfully deleted %s", filename);
+                console.log("'%s' deleted", filename);
                 done();
             });
         });
 
-        it("Should be a 200 OK", function() {
+        it("Should be a 200 (OK)", function() {
             expect(res.statusCode).equal(200);
         });
 
