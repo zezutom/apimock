@@ -13,8 +13,9 @@ module.exports = function (cacher, res, options, callback) {
             res.end();
         },
         error: function(res, err) {
-            // TODO
-            console.log("error: " + err);
+            res.writeHead(500, {"Content-Type": contentType});
+            res.write(JSON.stringify(err));
+            res.end();
         },
         get: function() {
             request({url: options.url, timeout: server.timeout}, this._handleResponse.bind(this));

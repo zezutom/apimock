@@ -15,8 +15,8 @@ module.exports = function (options) {
     var isGet = utils.conf(options.method, "GET").toUpperCase() === "GET";
 
     return {
-        read: function(res) {
-            var web = webutils(this, res, options.source);
+        read: function(res, callback) {
+            var web = webutils(this, res, options.source, callback);
             fs.readFile(filename, function(err, file) {
                 if (err) {
                     (isGet) ? web.get() : web.post();
@@ -25,10 +25,11 @@ module.exports = function (options) {
                 }
             });
         },
-        write: function(body) {
+        write: function(body, callback) {
             fs.writeFile(filename, body, function(err) {
                 if (err) throw err;
                 console.log("'%s' saved", filename);
+                if (callback) callback();
             });
         }
     }
