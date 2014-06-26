@@ -1,16 +1,29 @@
 {
     "Server": {
         "host": "localhost",
-        "port": 8080,
+        "port": 8082,
         "timeout": 2000   // timeout in milliseconds
     },
     "Routes": [
         {
-            "url": "http://myserver.com",
-            "source": "/test/mocks/api",
-            "target": "/api",
+            "url": "http://myserver.com/pub",
+            "source": "/test/mocks/pub",
+            "target": "/pub",
             "suffix": ".xml",
             "type": "application/xml"
+        },
+        {
+            "url": "http://myserver.com/xml",
+            "source": "/test/mocks/xml",
+            "target": "/xml",
+            "suffix": ".xml",
+            "type": "application/xml"
+        }
+    ],
+    "Redirects": [
+        {
+            "when": "/login",
+            "then": "/login_action?target=success"
         }
     ]
 }
