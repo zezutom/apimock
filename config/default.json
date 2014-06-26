@@ -19,11 +19,5 @@
             "suffix": ".xml",
             "type": "application/xml"
         }
-    ],
-    "Redirects": [
-        {
-            "when": "/login",
-            "then": "/login_action?target=success"
-        }
     ]
 }

@@ -42,11 +42,6 @@ module.exports = function (app, options) {
             app.post(route.target, function(req, res) {
                 me.initCacher(route, req, res);
             });
-        },
-        redirect: function(cond) {
-            app.get(cond.when, function(req, res) {
-                res.redirect(cond.then);
-            });
         }
     }
 }
