@@ -44,10 +44,11 @@ describe("Cacher", function() {
             savedFile = utils.absolutePath(__dirname, "/mocks/api/api%2Flinks%2F1.json");
         });
 
-        after(function() {
+        after(function(done) {
             fs.unlink(savedFile, function(err) {
                 if (err) throw err;
                 console.log("'%s' deleted", savedFile);
+                done();
             });
         });
 
@@ -79,7 +80,15 @@ describe("Cacher", function() {
             savedFile = utils.absolutePath(__dirname, "/mocks/api/api%2Ftest.json");
         });
 
-        it("Should save a response as a file", function() {
+        after(function(done) {
+            fs.unlink(savedFile, function(err) {
+                if (err) throw err;
+                console.log("'%s' deleted", savedFile);
+                done();
+            });
+        });
+
+        it("Should save a response as a file", function(done) {
             var body = JSON.stringify({key: "greeting", value: "hello world"});
             cache(cacheConfig("api/test", "http://myapp.com/api/test"))
                 .write(body, function () {
@@ -87,6 +96,7 @@ describe("Cacher", function() {
                         function (err, file) {
                             if (err) throw err;
                             expect(body).to.eql(file);
+                            done();
                         });
                 });
         });
