@@ -5,6 +5,7 @@ var fs = require("fs");
 var querystring = require('querystring');
 var webutils = require("../modules/utils/web.js");
 var cache = require("../modules/cache");
+var resolver = require("../modules/utils/nameresolver");
 
 describe("WebUtils", function() {
 
@@ -21,17 +22,23 @@ describe("WebUtils", function() {
             filename = __dirname.replace(/\\/g,"/") +
                 "/mocks/api/" + querystring.escape("api/users/1") + ".json";
 
+            var req = httpmock.createRequest({
+                method: "GET",
+                url: "/api/users/1"
+            });
+            var nameresolver = resolver({
+                root:__dirname.replace(/\\/g,"/"),
+                dest: "/mocks/api",
+                suffix: ".json"
+            }, req);
+
             cacher = cache({
                 source: {
                     type: "application/json",
-                    url: "http://myapp.com/users/1"
+                    url: "http://myapp.com" + req.url
                 },
-                target: {
-                    root:__dirname.replace(/\\/g,"/"),
-                    dest: "/mocks/api",
-                    suffix: ".json"
-                },
-                url: "api/users/1"
+                url: "api/users/1",
+                resolver: nameresolver
             });
 
             res = httpmock.createResponse({encoding: "utf8"});
@@ -77,6 +84,7 @@ describe("WebUtils", function() {
 
         it("Should save the response to a file", function() {
             fs.exists(filename, function(exists) {
+console.log("asserting file: '%s'", filename);
                 expect(exists).to.be.true;
             });
 

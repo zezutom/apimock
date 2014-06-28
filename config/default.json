@@ -6,18 +6,19 @@
     },
     "Routes": [
         {
-            "url": "http://myserver.com/pub",
+            "url": "http://static.pptestsite1.com/oxipub_mobenga_test3",
             "source": "/test/mocks/pub",
             "target": "/pub",
             "suffix": ".xml",
             "type": "application/xml"
         },
         {
-            "url": "http://myserver.com/xml",
+            "url": "http://static.pptestsite1.com/oxixml_mobenga_test3",
             "source": "/test/mocks/xml",
             "target": "/xml",
             "suffix": ".xml",
             "type": "application/xml"
         }
-    ]
+    ],
+    "PostMap": []
 }

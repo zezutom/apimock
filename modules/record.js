@@ -3,6 +3,7 @@ var redirects = require("config").Redirects;
 var request = require('request');
 var _ = require('underscore');
 var cache = require("./cache");
+var resolver = require("./utils/nameresolver");
 
 module.exports = function (app, options) {
     options = options || {};
@@ -19,18 +20,20 @@ module.exports = function (app, options) {
 
         },
         initCacher: function(route, req, res) {
+            var nameresolver = resolver({
+                    root: options.root,
+                    dest: route.source,
+                    suffix: route.suffix
+                }, req);
+
             var cacher = cache({
                 source: {
                     type: route.type,
                     url: route.url + (req._parsedUrl.search || ""),
                     method: req.method
                 },
-                target: {
-                    root: options.root,
-                    dest: route.source,
-                    suffix: route.suffix
-                },
-                url: req.url
+                url: req.url,
+                resolver: nameresolver
             });
             cacher.read(res);
         },

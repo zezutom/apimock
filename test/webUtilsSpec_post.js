@@ -5,6 +5,7 @@ var fs = require("fs");
 var querystring = require('querystring');
 var webutils = require("../modules/utils/web.js");
 var cache = require("../modules/cache");
+var resolver = require("../modules/utils/nameresolver");
 
 describe("WebUtils", function() {
 
@@ -13,28 +14,41 @@ describe("WebUtils", function() {
         var res, cacher, web, filename;
 
         before(function(done) {
+            var host = "http://myapp.com";
+            var url = "/users";
+            var body = {username: "test", email: "test@gmail.com"};
 
-            nock("http://myapp.com")
-                .post("/users", {username: "test", email: "test@gmail.com"})
+
+            nock(host)
+                .post(url, body)
                 .reply(201, {
                     ok: true,
                     id: "1"
                 });
 
             filename = __dirname.replace(/\\/g,"/") +
-                "/mocks/api/" + querystring.escape("api/users") + ".json";
+                "/mocks/api/username_test.json";
+
+            var req = httpmock.createRequest({
+                method: "POST",
+                url: url,
+                body: body
+            });
+
+            var nameresolver = resolver({
+                root:__dirname.replace(/\\/g,"/"),
+                dest: "/mocks/api",
+                suffix: ".json",
+                postMap: ["username"]
+            }, req);
 
             cacher = cache({
                 source: {
                     type: "application/json",
-                    url: "http://myapp.com/users"
+                    url: host + url
                 },
-                target: {
-                    root:__dirname.replace(/\\/g,"/"),
-                    dest: "/mocks/api",
-                    suffix: ".json"
-                },
-                url: "api/users"
+                url: url,
+                resolver: nameresolver
             });
 
             res = httpmock.createResponse({encoding: "utf8"});
@@ -42,8 +56,8 @@ describe("WebUtils", function() {
             web = webutils(cacher, res,
                 {
                     type: "application/json",
-                    url: "http://myapp.com/users",
-                    form: {username: "test", email: "test@gmail.com"}
+                    url: host + url,
+                    body: body
                 },
                 function(err) {
                     if (err) throw err;

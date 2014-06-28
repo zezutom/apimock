@@ -4,21 +4,24 @@ var httpmock = require("node-mocks-http");
 var nock = require('nock');
 var cache = require("../modules/cache");
 var utils = require("../modules/utils/common");
+var resolver = require("../modules/utils/nameresolver");
 
 describe("Cacher", function() {
 
-    var cacheConfig = function(url, sourceUrl) {
-        return {
-            source: {
-                type: "application/json",
-                url: sourceUrl
-            },
-            target: {
+    var cacheConfig = function(req) {
+        var nameresolver = resolver({
                 root:__dirname.replace(/\\/g,"/"),
                 dest: "/mocks/api",
                 suffix: ".json"
+            }, req);
+
+        return {
+            source: {
+                type: "application/json",
+                url: "http://myapp.com" + req.url
             },
-            url: url
+            url: req.url,
+            resolver: nameresolver
         };
     };
 
@@ -53,7 +56,11 @@ describe("Cacher", function() {
         });
 
         it("Should be able to read a response from a file", function() {
-            cache(cacheConfig("api/links", "http://myapp.com/api/links"))
+            var req = httpmock.createRequest({
+                method: "GET",
+                url: "/api/links"
+            });
+            cache(cacheConfig(req))
                 .read(res, function () {
                     fs.readFile(utils.absolutePath(__dirname, "/mocks/api/api%2Flinks.json"), "utf8",
                         function (err, file) {
@@ -63,7 +70,11 @@ describe("Cacher", function() {
                 });
         });
         it("Should download the response if it hasn't been saved", function() {
-            cache(cacheConfig("api/links/1", "http://myapp.com/api/links/1"))
+            var req = httpmock.createRequest({
+                method: "GET",
+                url: "/api/links/1"
+            });
+            cache(cacheConfig(req))
                 .read(res, function() {
                 fs.readFile(savedFile, "utf8", function(err, file) {
                     if (err) throw err;
@@ -90,7 +101,11 @@ describe("Cacher", function() {
 
         it("Should save a response as a file", function(done) {
             var body = JSON.stringify({key: "greeting", value: "hello world"});
-            cache(cacheConfig("api/test", "http://myapp.com/api/test"))
+            var req = httpmock.createRequest({
+                method: "GET",
+                url: "/api/test"
+            });
+            cache(cacheConfig(req))
                 .write(body, function () {
                     fs.readFile(savedFile, "utf8",
                         function (err, file) {

@@ -7,7 +7,8 @@ module.exports = function(app) {
         res.render("login");
     });
 
-    app.post("/loginSubmit", function(req, res) {
-        res.redirect("http://localhost/loginSubmitted");
+    app.post("/loginSubmit", function(req, res, next) {
+        res.cookie("rememberme", "true", { httpOnly: false});
+        res.redirect("/loginSuccess");
     });
 }

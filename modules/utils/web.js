@@ -21,10 +21,10 @@ module.exports = function (cacher, res, options, callback) {
             request({url: options.url, timeout: server.timeout}, this._handleResponse.bind(this));
         },
         post: function() {
-            request.post(options.url, {form: options.form}, this._handleResponse.bind(this));
+            request.post(options.url, {form: options.body}, this._handleResponse.bind(this));
         },
         _handleResponse: function(error, response, body) {
-            if (!error && response.statusCode == 200 || response.statusCode == 201) {
+            if (!error && (response && response.statusCode == 200 || response.statusCode == 201)) {
                 this.success(res, body, response.statusCode);
                 cacher.write(body);
                 if (callback) callback();
