@@ -1,18 +1,16 @@
 var fs = require("fs");
-var webutils = require("./utils/web");
-var utils = require("./utils/common");
+var resolver = require("./utils/nameresolver");
+var webUtils = require("./utils/web");
 
-module.exports = function (options) {
-    options = utils.conf(options);
-    var filename = options.resolver.resolve();
-    var isGet = utils.conf(options.method, "GET").toUpperCase() === "GET";
+module.exports = function (root, route, req) {
+    var filename = resolver(root, route, req).resolve();
 
     return {
         read: function(res, callback) {
-            var web = webutils(this, res, options.source, callback);
+            var web = webUtils(this, req, res, route, callback);
             fs.readFile(filename, function(err, file) {
                 if (err) {
-                    (isGet) ? web.get() : web.post();
+                    web.handleReq();
                 } else {
                     web.success(res, file);
                 }

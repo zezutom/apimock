@@ -1,10 +1,12 @@
 var server = require("config").Server;
 var request = require("request");
-var utils = require("./common");
+var common = require("./common");
 
-module.exports = function (cacher, res, options, callback) {
-    options = utils.conf(options);
-    var contentType = utils.conf(options.type, "application/json");
+module.exports = function (cacher, req, res, route, callback) {
+
+    var parsedUrl = req._parsedUrl || {};
+    var url = (route.url || "") + (parsedUrl.search || "");
+    var contentType = common.conf(route.type, "application/json");
 
     return {
         success: function(res, body, code) {
@@ -17,17 +19,21 @@ module.exports = function (cacher, res, options, callback) {
             res.write(JSON.stringify(err));
             res.end();
         },
-        get: function() {
-            request({url: options.url, timeout: server.timeout}, this._handleResponse.bind(this));
+        handleReq: function() {
+            common.isPost(req.method) ? this._post() : this._get();
         },
-        post: function() {
-            request.post(options.url, {form: options.body}, this._handleResponse.bind(this));
+        _get: function() {
+            request({url: url, timeout: server.timeout}, this._handleResponse.bind(this));
+        },
+        _post: function() {
+            request.post(url, {form: req.body}, this._handleResponse.bind(this));
         },
         _handleResponse: function(error, response, body) {
             if (!error && (response && response.statusCode == 200 || response.statusCode == 201)) {
                 this.success(res, body, response.statusCode);
-                cacher.write(body);
-                if (callback) callback();
+                cacher.write(body, function() {
+                    if (callback) callback();
+                });
             } else {
                 this.error(res, error);
                 if (callback) callback(error);

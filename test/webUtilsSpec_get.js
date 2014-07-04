@@ -1,65 +1,38 @@
 var expect = require("chai").expect;
 var httpmock = require("node-mocks-http");
 var nock = require('nock');
-var fs = require("fs");
-var querystring = require('querystring');
 var webutils = require("../modules/utils/web.js");
-var cache = require("../modules/cache");
-var resolver = require("../modules/utils/nameresolver");
+var utils = require("./testUtils");
 
 describe("WebUtils", function() {
 
-    describe("#get()", function() {
+    var res = utils.res(), filename = "api%2Fusers%2F1";
 
-        var res, cacher, web, filename;
+    var web = function(callback) {
+        var req = httpmock.createRequest({
+            method: "GET",
+            url: "/api/users/1"
+        });
+
+        return webutils(utils.cacher(req), req, res, utils.route(req), callback);
+    };
+
+    describe("#_get()", function() {
 
         before(function(done) {
 
             nock("http://myapp.com")
-                .get("/users/1")
+                .get("/api/users/1")
                 .reply(200, JSON.stringify({id: "1", username: "test", email: "test@gmail.com"}));
 
-            filename = __dirname.replace(/\\/g,"/") +
-                "/mocks/api/" + querystring.escape("api/users/1") + ".json";
-
-            var req = httpmock.createRequest({
-                method: "GET",
-                url: "/api/users/1"
-            });
-            var nameresolver = resolver({
-                root:__dirname.replace(/\\/g,"/"),
-                dest: "/mocks/api",
-                suffix: ".json"
-            }, req);
-
-            cacher = cache({
-                source: {
-                    type: "application/json",
-                    url: "http://myapp.com" + req.url
-                },
-                url: "api/users/1",
-                resolver: nameresolver
-            });
-
-            res = httpmock.createResponse({encoding: "utf8"});
-
-            web = webutils(cacher, res,
-                {type: "application/json", url: "http://myapp.com/users/1"},
-                function(err) {
-                    if (err) throw err;
-                    done();
-                }
-            );
-
-            web.get();
+            web(function (err) {
+                if (err) throw err;
+                done();
+            })._get();
         });
 
         after(function(done) {
-            fs.unlink(filename, function(err) {
-                if (err) throw err;
-                console.log("'%s' deleted", filename);
-                done();
-            });
+            utils.deleteFile(filename, done);
         });
 
         it("Should be a 200 (OK)", function() {
@@ -83,15 +56,7 @@ describe("WebUtils", function() {
         });
 
         it("Should save the response to a file", function() {
-            fs.exists(filename, function(exists) {
-console.log("asserting file: '%s'", filename);
-                expect(exists).to.be.true;
-            });
-
-            fs.readFile(filename, "utf8", function(err, file) {
-                if (err) throw err;
-                expect(res._getData()).to.eql(file);
-            });
+            utils.assertResponse(res, filename);
         });
     });
 });

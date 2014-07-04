@@ -5,6 +5,9 @@ var CommonUtils = {
     },
     absolutePath: function(root, path) {
         return root.replace(/\\/g,"/") + (path || "");
+    },
+    isPost: function(method) {
+        return method && (method.toUpperCase() === "POST");
     }
 }
 

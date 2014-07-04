@@ -1,17 +1,16 @@
 var expect = require("chai").expect;
 var httpmock = require("node-mocks-http");
-var nock = require('nock');
 var webutils = require("../modules/utils/web.js");
-var cache = require("../modules/cache");
+var utils = require("./testUtils");
 
 describe("WebUtils", function() {
     describe("#success()", function() {
 
-        var web, res;
+        var res = utils.res();
 
         before(function() {
-            web = webutils({type: "application/json"});
-            res = httpmock.createResponse({encoding: "utf8"});
+            var req = httpmock.createRequest();
+            var web = webutils(utils.cacher(req), req, res, {});
             web.success(res, '{"id":"1","name":"test"}');
         });
 

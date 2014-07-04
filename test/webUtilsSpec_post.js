@@ -1,79 +1,49 @@
 var expect = require("chai").expect;
 var httpmock = require("node-mocks-http");
 var nock = require('nock');
-var fs = require("fs");
-var querystring = require('querystring');
 var webutils = require("../modules/utils/web.js");
-var cache = require("../modules/cache");
-var resolver = require("../modules/utils/nameresolver");
+var utils = require("./testUtils");
 
 describe("WebUtils", function() {
 
-    describe("#post()", function() {
+    var res = utils.res(), filename = "username_test";
 
-        var res, cacher, web, filename;
+    var web = function(callback) {
+        var req = httpmock.createRequest({
+            method: "POST",
+            url: "/users",
+            body: {username: "test", email: "test@gmail.com"}
+        });
+
+        var route = {
+            url: "http://myapp.com" + req.url,
+            source: "/mocks/api",
+            suffix: ".json",
+            postMap: ["username"]
+        };
+
+        return webutils(utils.cacher(req, route), req, res, route, callback);
+    };
+
+    describe("#_post()", function() {
 
         before(function(done) {
-            var host = "http://myapp.com";
-            var url = "/users";
-            var body = {username: "test", email: "test@gmail.com"};
 
-
-            nock(host)
-                .post(url, body)
+            nock("http://myapp.com")
+                .post("/users", {username: "test", email: "test@gmail.com"})
                 .reply(201, {
                     ok: true,
                     id: "1"
                 });
 
-            filename = __dirname.replace(/\\/g,"/") +
-                "/mocks/api/username_test.json";
-
-            var req = httpmock.createRequest({
-                method: "POST",
-                url: url,
-                body: body
-            });
-
-            var nameresolver = resolver({
-                root:__dirname.replace(/\\/g,"/"),
-                dest: "/mocks/api",
-                suffix: ".json",
-                postMap: ["username"]
-            }, req);
-
-            cacher = cache({
-                source: {
-                    type: "application/json",
-                    url: host + url
-                },
-                url: url,
-                resolver: nameresolver
-            });
-
-            res = httpmock.createResponse({encoding: "utf8"});
-
-            web = webutils(cacher, res,
-                {
-                    type: "application/json",
-                    url: host + url,
-                    body: body
-                },
-                function(err) {
-                    if (err) throw err;
-                    done();
-                }
-            );
-
-            web.post();
+            web(function (err) {
+                if (err) throw err;
+                done();
+            })._post();
         });
 
         after(function(done) {
-            fs.unlink(filename, function(err) {
-                if (err) throw err;
-                console.log("'%s' deleted", filename);
-                done();
-            });
+            utils.deleteFile(filename, done);
         });
 
         it("Should be a 201 (CREATED)", function() {
@@ -96,16 +66,8 @@ describe("WebUtils", function() {
         });
 
         it("Should save the response to a file", function() {
-            fs.exists(filename, function(exists) {
-                expect(exists).to.be.true;
-            });
-
-            fs.readFile(filename, "utf8", function(err, file) {
-                if (err) throw err;
-                expect(res._getData()).to.eql(file);
-            });
+            utils.assertResponse(res, filename);
         });
-
     });
 });
 
