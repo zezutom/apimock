@@ -15,13 +15,17 @@ module.exports = function(root, route, req) {
             return filepath;
         },
         _get: function() {
-            return querystring.escape(url.parse(req.url.replace(/^(?:\/)+/, "")).path);
+            return this._escape(req.url);
         },
         _post: function() {
             return this._parseBody(req.body);
         },
+        _escape: function(name) {
+            return querystring.escape(url.parse(name.replace(/^(?:\/)+/, "")).path);
+        },
         _parseBody: function(body) {
             var name = "";
+            var me = this;
             _.each(route.postMap || [], function(item) {
                 var keys = item.split(".");
                 if (keys.length == 0) return;
@@ -31,10 +35,10 @@ module.exports = function(root, route, req) {
                 if (_.has(body, root)) {
                     var iter = function(key, head, tail) {
                         if (_.isObject(head)) {
-                            name += key + "_";
+                            name += me._escape(key) + "_";
                             return iter(_.first(tail), head[key], _.without(tail, key) || []);
                         } else {
-                            name += head;
+                            name += me._escape(head);
                         }
                         return name;
                     };
