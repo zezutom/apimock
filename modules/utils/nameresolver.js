@@ -25,27 +25,15 @@ module.exports = function(root, route, req) {
         },
         _parseBody: function(body) {
             var name = "";
-            var me = this;
             _.each(route.postMap || [], function(item) {
-                var keys = item.split(".");
-                if (keys.length == 0) return;
+                var val = item.split(".").reduce(function(obj, i) {return (obj) ? obj[i] : undefined}, body);
 
-                var root = keys[0];
-
-                if (_.has(body, root)) {
-                    var iter = function(key, head, tail) {
-                        if (_.isObject(head)) {
-                            name += me._escape(key) + "_";
-                            return iter(_.first(tail), head[key], _.without(tail, key) || []);
-                        } else {
-                            name += me._escape(head);
-                        }
-                        return name;
-                    };
-                    return iter(root, _.pick(body,root), _.without(keys, root));
+                console.log("parsing: '%s': '%s'", item, val);
+                if (val) {
+                    name = (item + "_" + val).replace(/\./g, "_");
                 }
             });
-            return name;
+            return this._escape(name);
         }
-    }
+   }
 }
