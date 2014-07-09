@@ -19,9 +19,6 @@ module.exports = function(root, route, req) {
             console.log("resolved to: '%s'", filepath);
             return filepath;
         },
-        _exactName: function() {
-            return req.params.id;
-        },
         _get: function() {
             return this._escape(req.url);
         },
