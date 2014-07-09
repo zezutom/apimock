@@ -9,10 +9,18 @@ module.exports = function(root, route, req) {
 
     return {
         resolve: function() {
-            var name = (common.isPost(req.method)) ? this._post() : this._get();
+            var name = req.params.filename || null;
+
+            if (!name) {
+                name = (common.isPost(req.method)) ? this._post() : this._get();
+            }
+
             var filepath = path.join((root || "/") + (route.source || ""), name + (route.suffix || ""));
             console.log("resolved to: '%s'", filepath);
             return filepath;
+        },
+        _exactName: function() {
+            return req.params.id;
         },
         _get: function() {
             return this._escape(req.url);

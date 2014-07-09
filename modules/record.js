@@ -20,7 +20,6 @@ module.exports = function (app, options) {
             var me = this;
             if (common.isPost(route.method)) {
                 app.post(route.target, function(req, res) {
-                    //console.log("capture a post: %s", util.inspect(req.body));
                     me.saveRes(route, req, res, true);
                 });
             } else {

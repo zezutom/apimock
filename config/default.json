@@ -20,6 +20,12 @@
             "type": "application/xml",
             "method": "POST",
             "postMap": ["user.username"]
+        },
+        {
+            "url": "http://myapp.com/rss",
+            "source": "/test/mocks/rss",
+            "target": "/rss/:filename",
+            "type": "application/xml"
         }
     ]
 }
