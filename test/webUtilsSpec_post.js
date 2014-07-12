@@ -17,7 +17,7 @@ describe("WebUtils", function() {
 
         var route = {
             url: "http://myapp.com" + req.url,
-            source: "/mocks/api",
+            source: "/test/mocks/api",
             suffix: ".json",
             postMap: ["username"]
         };

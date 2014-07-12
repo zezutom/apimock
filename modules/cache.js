@@ -2,8 +2,8 @@ var fs = require("fs");
 var resolver = require("./utils/nameresolver");
 var webUtils = require("./utils/web");
 
-module.exports = function (root, route, req) {
-    var filename = resolver(root, route, req).resolve();
+module.exports = function (route, req) {
+    var filename = resolver(route, req).resolve();
 
     return {
         read: function(res, callback) {

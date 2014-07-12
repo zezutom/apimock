@@ -4,8 +4,7 @@ var util = require('util');
 var cache = require("./cache");
 var common = require('./utils/common');
 
-module.exports = function (app, options) {
-    options = options || {};
+module.exports = function (app) {
 
     return {
         init: function() {
@@ -14,7 +13,7 @@ module.exports = function (app, options) {
             }, this);
         },
         saveRes: function(route, req, res, post) {
-            cache(options.root, route, req, post).read(res);
+            cache(route, req, post).read(res);
         },
         map: function(route) {
             var me = this;

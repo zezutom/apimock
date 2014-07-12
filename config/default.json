@@ -6,26 +6,11 @@
     },
     "Routes": [
         {
-            "url": "http://myapp.com/pub",
-            "source": "/test/mocks/pub",
-            "target": "/pub",
-            "suffix": ".xml",
-            "type": "application/xml"
-        },
-        {
-            "url": "http://myapp.com/xml",
-            "source": "/test/mocks/xml",
-            "target": "/xml",
-            "suffix": ".xml",
-            "type": "application/xml",
-            "method": "POST",
-            "postMap": ["user.username"]
-        },
-        {
-            "url": "http://myapp.com/rss",
-            "source": "/test/mocks/rss",
-            "target": "/rss/:filename",
-            "type": "application/xml"
+            "url": "http://myapp.com/api",
+            "source": "/test/mocks/api",
+            "target": "/api",
+            "suffix": ".json",
+            "type": "application/json"
         }
     ]
 }

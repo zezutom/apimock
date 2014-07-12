@@ -2,10 +2,11 @@ var url = require("url");
 var path = require("path");
 var querystring = require('querystring');
 var common = require("./common");
-var _ = require('underscore');
-var util = require('util');
+var _ = require("underscore");
+var util = require("util");
+var conf = require("./conf");
 
-module.exports = function(root, route, req) {
+module.exports = function(route, req) {
 
     return {
         resolve: function() {
@@ -15,7 +16,7 @@ module.exports = function(root, route, req) {
                 name = (common.isPost(req.method)) ? this._post() : this._get();
             }
 
-            var filepath = path.join((root || "/") + (route.source || ""), name + (route.suffix || ""));
+            var filepath = path.join(conf.source(route), name + (route.suffix || ""));
             console.log("resolved to: '%s'", filepath);
             return filepath;
         },

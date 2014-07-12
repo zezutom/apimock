@@ -6,12 +6,10 @@ var common = require("../modules/utils/common");
 
 var TestUtils = {
     cacher: function (req, route) {
-        var root = __dirname.replace(/\\/g, "/");
-
-        return cache(root, route || this.route(req), req);
+        return cache(route || this.route(req), req);
     },
     route: function(req) {
-        return {url: "http://myapp.com" + req.url, source: "/mocks/api", suffix: ".json"};
+        return {url: "http://myapp.com" + req.url, source: "/test/mocks/api", suffix: ".json"};
     },
     res: function () {
         return httpmock.createResponse({encoding: "utf8"});
