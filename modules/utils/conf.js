@@ -4,12 +4,12 @@ var server = require("config").Server;
 // or it defaults to the project root directory
 var root = process.env.NODE_CONFIG_DIR || process.cwd();
 
-var ConfUtil = {
+var ConfUtils = {
     views: function() {
-        return root + (server.views || "views");
+        return root + (server.views || "/views");
     },
     routes: function() {
-        return root + (server.routes || "routes/index");
+        return root + (server.routes || "/routes/index");
     },
     port: function() {
         return server.port;
@@ -22,4 +22,4 @@ var ConfUtil = {
     }
 };
 
-module.exports = ConfUtil;
+module.exports = ConfUtils;
