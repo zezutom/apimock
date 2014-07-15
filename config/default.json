@@ -11,6 +11,14 @@
             "target": "/api",
             "suffix": ".json",
             "type": "application/json"
+        },
+        // TODO:
+        {
+            "url": "www.google.com/finance/info?client=ig&q=",
+            "source": "/data/quotes",
+            "target": "/quotes",
+            "type": "application/json",
+            "loop": true    // TODO if 'loop' then take the 'source' and iterate over files in it
         }
     ]
 }
