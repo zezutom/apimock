@@ -1,41 +1,22 @@
 apimock
 =======
 
-A simple API mock based on Node.js and Express. Credit goes to [coderwall](https://coderwall.com/p/ss80vw).
+A simple and easy-to-use http proxy. Does your project depend on 3rd party APIs? Don't let your productivity suffer by frequent down times. Capture the responses, adjust them to your needs and off you go! Everything is stored as plain text files. Looking to automate your tests? Make them stable, predictable and completely independent from external data providers.
+
+Inspired by an excellent blogpost at [coderwall](https://coderwall.com/p/ss80vw).
 
 Features
 --------
-Loads text files (JSON) from filesystem and maps them as responses to HTTP GET calls.
+* handles GET and POST requests
+* customizable MIME types, tested with json and xml
+* externalize your project configuration (you don't have to deal with apimock's own files)
+* high transparency, no database, just plain text files
 
 Get Started
 -----------
-You are going to need Node.js and Express as the corner stones, as well as a bunch of useful modules.
-
-1. Download and install Node.js in whatever way suits you best:
-  * Go to the [project site](http://nodejs.org), download an installer and run it OR
-  * on Mac OS / Linux run `brew install node`
-2. Install Express by running `npm install -g express`. Should you hit failures just run the same command using `sudo`
-3. To be able to generate the app you also have to install a module called express-generator: 
-  * `npm install -g express-generator`
-4. Go to the install directory `cd apimock` and install (locally! i.e. without the `-g` option): 
-  * `npm install glob`
-  * `npm install config`
-  * `npm install yaml`
+1. Install Node.js [Node.js](http://nodejs.org)
+2. cd to apimock's root directory and run `npm start`
 
 Usage
 -----
-1. Add your JSON files to the directory `/test/mocks/api`
-2. Go to the install directory: `cd apimock`
-3. Fetch all of the dependencies: `npm install` 
-4. Finally, start the app:
-  * `npm start` (a restart is required every time any change is made) OR
-  * `nodemon app.js` (only requires a restart if a new file has been added to the app)
-
-In the web browser go to `http://127.0.0.1:8080`
-  * The page will complain there is no mapping for '/', but that's okay
-
-Test it out! Use the example data to verify the saved responses have been correctly mapped:
-  * `http://127.0.0.1:8080/api/links`
-  * `http://127.0.0.1:8080/api/posts`
-  * `http://127.0.0.1:8080/api/photos/1`
-
+TBD 
