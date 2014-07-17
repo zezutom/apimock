@@ -1,0 +1,261 @@
+{
+  "result" : "ok",
+  "authors" : {
+    "1" : {
+      "U" : "http://en.wiktionary.org",
+      "id" : 1,
+      "N" : "en.wiktionary.org"
+    },
+    "16" : {
+      "U" : "http://nl.wiktionary.org",
+      "id" : 16,
+      "N" : "nl.wiktionary.org"
+    },
+    "2" : {
+      "U" : "http://pl.wiktionary.org",
+      "id" : 2,
+      "N" : "pl.wiktionary.org"
+    },
+    "60172" : {
+      "U" : "http://www.omegawiki.org/",
+      "id" : 60172,
+      "N" : "omegawiki"
+    },
+    "20" : {
+      "U" : "http://www.slowniki.org.pl/",
+      "id" : 20,
+      "N" : "Jerzy Kazojc"
+    },
+    "2692" : {
+      "U" : "http://dumps.wikimedia.org/iswiktionary/latest/iswiktionary-latest-pages-articles.xml.bz2",
+      "id" : 2692,
+      "N" : "Wikiordabok"
+    },
+    "2695" : {
+      "U" : "http://dumps.wikimedia.org/enwiktionary/latest/enwiktionary-latest-pages-articles.xml.bz2",
+      "id" : 2695,
+      "N" : "Wiktionary"
+    },
+    "856" : {
+      "U" : null,
+      "id" : 856,
+      "N" : "j...i@hotmail.com"
+    },
+    "2736" : {
+      "U" : "http://www.csse.monash.edu.au/~jwb/j_jmdict.html",
+      "id" : 2736,
+      "N" : "JMdict-Japanese-Multilingual-Dictio..."
+    },
+    "14" : {
+      "U" : "http://sv.wiktionary.org",
+      "id" : 14,
+      "N" : "sv.wiktionary.org"
+    }
+  },
+  "dest" : "pol",
+  "phrase" : "hello",
+  "tuc" : [ {
+    "authors" : [ 14 ],
+    "meaningId" : -4197147171242712454,
+    "meanings" : [ {
+      "text" : "greeting",
+      "language" : "eng"
+    }, {
+      "text" : "pozdrowienie innej osoby",
+      "language" : "pol"
+    } ],
+    "phrase" : {
+      "text" : "cześć",
+      "language" : "pol"
+    }
+  }, {
+    "authors" : [ 2695 ],
+    "meaningId" : -722056940410058110,
+    "meanings" : [ {
+      "text" : "is anyone there?",
+      "language" : "eng"
+    }, {
+      "text" : "when answering the telephone",
+      "language" : "eng"
+    } ],
+    "phrase" : {
+      "text" : "halo",
+      "language" : "pol"
+    }
+  }, {
+    "authors" : [ 2695 ],
+    "meaningId" : 4990432062937857421,
+    "meanings" : [ {
+      "text" : "when answering the telephone",
+      "language" : "eng"
+    } ],
+    "phrase" : {
+      "text" : "słucham",
+      "language" : "pol"
+    }
+  }, {
+    "authors" : [ 2695 ],
+    "meaningId" : 1655101544685186681,
+    "meanings" : [ {
+      "text" : "greeting",
+      "language" : "eng"
+    } ],
+    "phrase" : {
+      "text" : "dzień dobry",
+      "language" : "pol"
+    }
+  }, {
+    "authors" : [ 2695 ],
+    "meaningId" : 1018047335265658796,
+    "meanings" : [ {
+      "text" : "greeting",
+      "language" : "eng"
+    } ],
+    "phrase" : {
+      "text" : "witaj",
+      "language" : "pol"
+    }
+  }, {
+    "authors" : [ 2695 ],
+    "meaningId" : 7092984344015218454,
+    "meanings" : [ {
+      "text" : "greeting",
+      "language" : "eng"
+    } ],
+    "phrase" : {
+      "text" : "witajcie",
+      "language" : "pol"
+    }
+  }, {
+    "authors" : [ 2695 ],
+    "meaningId" : -381337373929877655,
+    "meanings" : [ {
+      "text" : "greeting",
+      "language" : "eng"
+    } ],
+    "phrase" : {
+      "text" : "witam",
+      "language" : "pol"
+    }
+  }, {
+    "authors" : [ 2692 ],
+    "meaningId" : -1894958058582978544,
+    "phrase" : {
+      "text" : "dobrego dnia",
+      "language" : "pol"
+    }
+  }, {
+    "authors" : [ 16 ],
+    "meaningId" : 5371408420391754912,
+    "phrase" : {
+      "text" : "hej",
+      "language" : "pol"
+    }
+  }, {
+    "authors" : [ 20 ],
+    "meaningId" : -6111480513418787089,
+    "phrase" : {
+      "text" : "powitać",
+      "language" : "pol"
+    }
+  }, {
+    "authors" : [ 20 ],
+    "meaningId" : -8088151096197358739,
+    "phrase" : {
+      "text" : "witać",
+      "language" : "pol"
+    }
+  }, {
+    "authors" : [ 2 ],
+    "meaningId" : -7573616188197582443,
+    "meanings" : [ {
+      "text" : "cześć, dzień dobry",
+      "language" : "pol"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "&quot;Hello!&quot; or an equivalent greeting.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "A greeting used when answering the telephone.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "sarcastic: that was foolish",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "A call for response if it is not clear if anyone is present or listening, or if a telephone conversation may have been disconnected.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "(colloquial) Used sarcastically to imply that the person addressed or referred to has done something the speaker or writer considers to be foolish.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 2736 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "hello (e.g. on phone)",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "expression of puzzlement",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 60172 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "Expression of greeting used by two or more people who meet each other.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "A greeting (salutation) said when meeting someone or acknowledging someone&rsquo;s arrival or presence.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 856 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "hello",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "An expression of puzzlement or discovery.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 2736 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "good day (daytime greeting)",
+      "language" : "eng"
+    } ]
+  } ],
+  "from" : "eng"
+}

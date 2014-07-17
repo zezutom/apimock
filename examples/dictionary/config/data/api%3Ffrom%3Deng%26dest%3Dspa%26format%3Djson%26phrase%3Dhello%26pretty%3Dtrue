@@ -1,0 +1,270 @@
+{
+  "result" : "ok",
+  "authors" : {
+    "1" : {
+      "U" : "http://en.wiktionary.org",
+      "id" : 1,
+      "N" : "en.wiktionary.org"
+    },
+    "2697" : {
+      "U" : "http://dumps.wikimedia.org/dewiktionary/latest/dewiktionary-latest-pages-articles.xml.bz2",
+      "id" : 2697,
+      "N" : "Wikiworterbuch"
+    },
+    "25018" : {
+      "U" : "http://glosbe.com",
+      "id" : 25018,
+      "N" : "GlosbeResearch"
+    },
+    "2698" : {
+      "U" : "http://dumps.wikimedia.org/frwiktionary/latest/frwiktionary-latest-pages-articles.xml.bz2",
+      "id" : 2698,
+      "N" : "Wiktionnaire"
+    },
+    "2695" : {
+      "U" : "http://dumps.wikimedia.org/enwiktionary/latest/enwiktionary-latest-pages-articles.xml.bz2",
+      "id" : 2695,
+      "N" : "Wiktionary"
+    },
+    "856" : {
+      "U" : null,
+      "id" : 856,
+      "N" : "j...i@hotmail.com"
+    },
+    "13" : {
+      "U" : "http://ro.wiktionary.org",
+      "id" : 13,
+      "N" : "ro.wiktionary.org"
+    },
+    "58970" : {
+      "U" : null,
+      "id" : 58970,
+      "N" : "Jorge Traceur Anaya Ayala"
+    },
+    "2736" : {
+      "U" : "http://www.csse.monash.edu.au/~jwb/j_jmdict.html",
+      "id" : 2736,
+      "N" : "JMdict-Japanese-Multilingual-Dictio..."
+    }
+  },
+  "dest" : "spa",
+  "phrase" : "hello",
+  "tuc" : [ {
+    "authors" : [ 58970 ],
+    "meaningId" : 2604210910528857609,
+    "meanings" : [ {
+      "text" : "when answering the telephone",
+      "language" : "eng"
+    }, {
+      "text" : "greeting",
+      "language" : "eng"
+    }, {
+      "text" : "saludo",
+      "language" : "spa"
+    }, {
+      "text" : "saludo con la boca",
+      "language" : "eng"
+    }, {
+      "text" : "Expresi&oacute;n de saludo utilizada entre dos o m&aacute;s personas de trato familiar.",
+      "language" : "spa"
+    }, {
+      "text" : "Expression of greeting used by two or more people who meet each other.",
+      "language" : "eng"
+    }, {
+      "text" : "saludo",
+      "language" : "spa"
+    } ],
+    "phrase" : {
+      "text" : "hola",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 2695 ],
+    "meaningId" : -3810726875855076810,
+    "meanings" : [ {
+      "text" : "is anyone there?",
+      "language" : "eng"
+    }, {
+      "text" : "when answering the telephone",
+      "language" : "eng"
+    } ],
+    "phrase" : {
+      "text" : "aló",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : 2049349680256757428,
+    "meanings" : [ {
+      "text" : "greeting",
+      "language" : "eng"
+    } ],
+    "phrase" : {
+      "text" : "buenos días",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 2695 ],
+    "meaningId" : 7095141425858267107,
+    "meanings" : [ {
+      "text" : "when answering the telephone",
+      "language" : "eng"
+    } ],
+    "phrase" : {
+      "text" : "dígame",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 2695 ],
+    "meaningId" : 2010322088821498720,
+    "phrase" : {
+      "text" : "bueno",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 2695 ],
+    "meaningId" : 2673352143405006851,
+    "phrase" : {
+      "text" : "diga",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : -8512038806660917736,
+    "meanings" : [ {
+      "text" : "greeting",
+      "language" : "eng"
+    } ],
+    "phrase" : {
+      "text" : "qué tal",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 2698 ],
+    "meaningId" : -3925637678234276441,
+    "phrase" : {
+      "text" : "buenas tardes",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 25018 ],
+    "meaningId" : -2436061067820604808,
+    "phrase" : {
+      "text" : "cómo estás",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 25018 ],
+    "meaningId" : 5004781800042863007,
+    "phrase" : {
+      "text" : "eh",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 2697 ],
+    "meaningId" : 5996902175498968813,
+    "phrase" : {
+      "text" : "oiga",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 13 ],
+    "meaningId" : 4873640702138439842,
+    "phrase" : {
+      "text" : "oigo",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 25018 ],
+    "meaningId" : -8799850979522606316,
+    "phrase" : {
+      "text" : "oye",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 25018 ],
+    "meaningId" : 2079957058332742819,
+    "phrase" : {
+      "text" : "si",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "&quot;Hello!&quot; or an equivalent greeting.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "A greeting used when answering the telephone.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "sarcastic: that was foolish",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "A call for response if it is not clear if anyone is present or listening, or if a telephone conversation may have been disconnected.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "(colloquial) Used sarcastically to imply that the person addressed or referred to has done something the speaker or writer considers to be foolish.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 2736 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "hello (e.g. on phone)",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "expression of puzzlement",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "A greeting (salutation) said when meeting someone or acknowledging someone&rsquo;s arrival or presence.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 856 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "hello",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "An expression of puzzlement or discovery.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 2736 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "good day (daytime greeting)",
+      "language" : "eng"
+    } ]
+  } ],
+  "from" : "eng"
+}

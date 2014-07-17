@@ -1,0 +1,54 @@
+{
+  "result" : "ok",
+  "authors" : {
+    "1" : {
+      "U" : "http://en.wiktionary.org",
+      "id" : 1,
+      "N" : "en.wiktionary.org"
+    },
+    "2695" : {
+      "U" : "http://dumps.wikimedia.org/enwiktionary/latest/enwiktionary-latest-pages-articles.xml.bz2",
+      "id" : 2695,
+      "N" : "Wiktionary"
+    }
+  },
+  "dest" : "eng",
+  "phrase" : "witaj",
+  "tuc" : [ {
+    "authors" : [ 2695 ],
+    "meaningId" : 1018047335265658796,
+    "meanings" : [ {
+      "text" : "greeting",
+      "language" : "eng"
+    } ],
+    "phrase" : {
+      "text" : "hello",
+      "language" : "eng"
+    }
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : -7811351639167446881,
+    "meanings" : [ {
+      "text" : "greeting given upon someone&#39;s arrival",
+      "language" : "eng"
+    }, {
+      "text" : "A greeting used when someone arrives.",
+      "language" : "eng"
+    } ],
+    "phrase" : {
+      "text" : "welcome",
+      "language" : "eng"
+    }
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : 1424344869120844659,
+    "meanings" : [ {
+      "text" : "hello",
+      "language" : "pol"
+    }, {
+      "text" : "welcome",
+      "language" : "pol"
+    } ]
+  } ],
+  "from" : "pol"
+}

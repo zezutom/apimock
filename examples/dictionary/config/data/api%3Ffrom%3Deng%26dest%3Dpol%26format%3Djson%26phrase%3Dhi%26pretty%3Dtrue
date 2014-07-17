@@ -1,0 +1,94 @@
+{
+  "result" : "ok",
+  "authors" : {
+    "1" : {
+      "U" : "http://en.wiktionary.org",
+      "id" : 1,
+      "N" : "en.wiktionary.org"
+    },
+    "2" : {
+      "U" : "http://pl.wiktionary.org",
+      "id" : 2,
+      "N" : "pl.wiktionary.org"
+    },
+    "60172" : {
+      "U" : "http://www.omegawiki.org/",
+      "id" : 60172,
+      "N" : "omegawiki"
+    },
+    "20" : {
+      "U" : "http://www.slowniki.org.pl/",
+      "id" : 20,
+      "N" : "Jerzy Kazojc"
+    },
+    "2695" : {
+      "U" : "http://dumps.wikimedia.org/enwiktionary/latest/enwiktionary-latest-pages-articles.xml.bz2",
+      "id" : 2695,
+      "N" : "Wiktionary"
+    }
+  },
+  "dest" : "pol",
+  "phrase" : "hi",
+  "tuc" : [ {
+    "authors" : [ 2695 ],
+    "meaningId" : -1973831012480477549,
+    "meanings" : [ {
+      "text" : "friendly, informal greeting",
+      "language" : "eng"
+    }, {
+      "text" : "pozdrowienie innej osoby",
+      "language" : "pol"
+    } ],
+    "phrase" : {
+      "text" : "cześć",
+      "language" : "pol"
+    }
+  }, {
+    "authors" : [ 2 ],
+    "meaningId" : 3389156045399520933,
+    "meanings" : [ {
+      "text" : "powitanie",
+      "language" : "pol"
+    } ],
+    "phrase" : {
+      "text" : "hej",
+      "language" : "pol"
+    }
+  }, {
+    "authors" : [ 20 ],
+    "meaningId" : -8602696109978239290,
+    "phrase" : {
+      "text" : "serwus",
+      "language" : "pol"
+    }
+  }, {
+    "authors" : [ 2 ],
+    "meaningId" : -6810357857570216585,
+    "meanings" : [ {
+      "text" : "&#39;&#39;&#39;pot.&#39;&#39;&#39; &#39;&#39;&#39;potocznie&#39;&#39;&#39; cześć",
+      "language" : "pol"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "A friendly, informal, casual greeting said when meeting someone.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 60172 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "Expression of greeting used by two or more people who meet each other.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "Informal spelling of high, often hyphenated.",
+      "language" : "eng"
+    } ]
+  } ],
+  "from" : "eng"
+}

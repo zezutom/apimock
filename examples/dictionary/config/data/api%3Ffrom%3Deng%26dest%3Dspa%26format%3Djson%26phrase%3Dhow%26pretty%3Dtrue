@@ -1,0 +1,192 @@
+{
+  "result" : "ok",
+  "authors" : {
+    "1" : {
+      "U" : "http://en.wiktionary.org",
+      "id" : 1,
+      "N" : "en.wiktionary.org"
+    },
+    "25018" : {
+      "U" : "http://glosbe.com",
+      "id" : 25018,
+      "N" : "GlosbeResearch"
+    },
+    "2695" : {
+      "U" : "http://dumps.wikimedia.org/enwiktionary/latest/enwiktionary-latest-pages-articles.xml.bz2",
+      "id" : 2695,
+      "N" : "Wiktionary"
+    },
+    "14" : {
+      "U" : "http://sv.wiktionary.org",
+      "id" : 14,
+      "N" : "sv.wiktionary.org"
+    }
+  },
+  "dest" : "spa",
+  "phrase" : "how",
+  "tuc" : [ {
+    "authors" : [ 1 ],
+    "meaningId" : 2521265620727292491,
+    "meanings" : [ {
+      "text" : "used as a modifier to indicate surprise, delight, or other strong feelings",
+      "language" : "eng"
+    }, {
+      "text" : "to what degree",
+      "language" : "eng"
+    }, {
+      "text" : "in what state",
+      "language" : "eng"
+    }, {
+      "text" : "in which way",
+      "language" : "eng"
+    }, {
+      "text" : "in what manner",
+      "language" : "eng"
+    }, {
+      "text" : "&iquest;De qu&eacute; manera?",
+      "language" : "spa"
+    }, {
+      "text" : "In what way.",
+      "language" : "eng"
+    } ],
+    "phrase" : {
+      "text" : "como",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 14 ],
+    "meaningId" : -6207411407114435746,
+    "meanings" : [ {
+      "text" : "&iquest;De qu&eacute; manera?",
+      "language" : "spa"
+    }, {
+      "text" : "In what way.",
+      "language" : "eng"
+    } ],
+    "phrase" : {
+      "text" : "cómo",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : 6151588355110920020,
+    "meanings" : [ {
+      "text" : "to what degree",
+      "language" : "eng"
+    } ],
+    "phrase" : {
+      "text" : "cuán",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : 1227616622345189792,
+    "meanings" : [ {
+      "text" : "used as a modifier to indicate surprise, delight, or other strong feelings",
+      "language" : "eng"
+    } ],
+    "phrase" : {
+      "text" : "que",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 25018 ],
+    "meaningId" : 4164540736180998035,
+    "phrase" : {
+      "text" : "cuan",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 25018 ],
+    "meaningId" : 5485290754649831965,
+    "phrase" : {
+      "text" : "cómo estás",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 25018 ],
+    "meaningId" : -3736566814645412195,
+    "phrase" : {
+      "text" : "muy",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 2695 ],
+    "meaningId" : 3490454026334770924,
+    "phrase" : {
+      "text" : "qué",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 25018 ],
+    "meaningId" : 4468222270083248005,
+    "phrase" : {
+      "text" : "si",
+      "language" : "spa"
+    }
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "Used as a modifier to indicate surprise, delight, or other strong feelings.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "(dialectal) An artificial barrow or tumulus.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "To what degree.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "That, the fact that, the way that.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "(dialectal) A small hill in northern England. (Usage preserved mainly in place names.)",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "In which way; in such way.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "In what state.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "In what manner.",
+      "language" : "eng"
+    } ]
+  }, {
+    "authors" : [ 1 ],
+    "meaningId" : null,
+    "meanings" : [ {
+      "text" : "The means by which something is accomplished.",
+      "language" : "eng"
+    } ]
+  } ],
+  "from" : "eng"
+}

@@ -1,0 +1,21 @@
+extends layout
+
+include lang
+
+block content
+  h2 Welcome to #{title}
+  form(method="GET", action="/search")
+    input(type="hidden", name="_method", value="PUT")
+    p Phrase
+      input(type="text", name="word")
+      +langs("from", "eng")
+      +langs("to", "spa")
+    p
+      input(type="submit")
+  if locals.data
+      p phrase: !{data.phrase}
+      ol#meanings
+        each tuc in data.tuc
+          if tuc.meanings
+            each meaning in tuc.meanings
+              li #{meaning.text} (#{tuc.authors} votes)

@@ -1,0 +1,6 @@
+mixin langs(name, lang)
+  -var options=[{code: "eng", name: "English"},{code: "deu", name: "German"},{code: "pol", name: "Polish"},{code: "spa", name: "Spanish"}];
+
+  select(name=name)
+    each option in options
+      option(value=option.code, selected=(lang==option.code))=option.name

@@ -1,0 +1,15 @@
+{
+    "Server": {
+        "host": "localhost",
+        "port": 8082,
+        "timeout": 2000   // timeout in milliseconds
+    },
+    "Routes": [
+        {
+            "url": "http://glosbe.com/gapi/translate",
+            "source": "/data",
+            "target": "/api",
+            "type": "application/json"
+        }
+    ]
+}

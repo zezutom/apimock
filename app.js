@@ -18,7 +18,8 @@ app.set("view engine", "jade");
 
 // Attach routes
 require("./routes/index")(app);
-require(conf.routes())(app);
+if (conf.routes())
+    require(conf.routes())(app);
 
 // Attach a response recorder
 record(app).init();
