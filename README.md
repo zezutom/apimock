@@ -26,7 +26,31 @@ Usage
 Done. All requests towards the 3rd-party API(s) are mediated via apimock. When an API call is made, apimock either returns a previously saved response, or proceeds with the request, captures and saves the API response.
 
 ### Example
-TBC
+Suppose your application is a simple dictionary powered by [Glosbe API](http://glosbe.com/a-api). The complete app is available at `examples/directory`.
 
+Here is how the API is used (copy-paste from Glosbe documentation):
+* Translate Polish 'witaj' into English, output format is json: http://glosbe.com/gapi/translate?from=pol&dest=eng&format=json&phrase=witaj&pretty=true
+* Translate English 'cat' into French, include example sentences as well, output is xml: http://glosbe.com/gapi/translate?from=eng&dest=fra&format=xml&phrase=cat&pretty=true
+
+Now, let's take a look at how to break a direct dependency on Glosbe API by using apimock.
+
+#### 1. Create a configuration file
+`examples/dictionary/config/default.json`:
+```
+{
+    "Server": {
+        "host": "localhost",
+        "port": 8082
+    },
+    "Routes": [
+        {
+            "url": "http://glosbe.com/gapi/translate",
+            "source": "/data",
+            "target": "/api",
+            "type": "application/json"
+        }
+    ]
+}
+```
 
 
