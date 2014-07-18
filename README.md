@@ -19,4 +19,14 @@ Get Started
 
 Usage
 -----
-TBD 
+1. Create a configuration file in a directory of your choice
+2. In your application replace links to 3rd-party API(s) with a url of the apimock, for ex.:  `http://localhost:8082`
+3. Start apimock:  `start.sh your_config_dir`
+
+Done. All requests towards the 3rd-party API(s) are mediated via apimock. When an API call is made, apimock either returns a previously saved response, or proceeds with the request, captures and saves the API response.
+
+### Example
+TBC
+
+
+
