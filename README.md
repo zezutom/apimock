@@ -53,4 +53,11 @@ Now, let's take a look at how to break a direct dependency on Glosbe API by usin
 }
 ```
 
+### 2. Replace links to 3rd-party API with apimock
+`examples/dictionary/routes/index.js`:
+
+```javascript
+var apiUrl = 'http://localhost:8082/api?from=' + from + '&dest=' + to + '&format=json&phrase=' + word + '&pretty=true';
+```
+
 
