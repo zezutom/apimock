@@ -68,3 +68,16 @@ nohup ../../start.sh $(pwd)/config  > ./logs/apimock.log 2>&1 &
 npm start
 ```
 
+#### 4. Make a few API calls and observe the saved responses
+Use the dictionary app to make a few translation and note how responses are being saved.
+
+`examples/dictionary/config/data/`:
+```
+api%3Ffrom%3Deng%26dest%3Dpol%26format%3Djson%26phrase%3Dhello%26pretty%3Dtrue
+api%3Ffrom%3Deng%26dest%3Dpol%26format%3Djson%26phrase%3Dhi%26pretty%3Dtrue
+api%3Ffrom%3Deng%26dest%3Dspa%26format%3Djson%26phrase%3D%26pretty%3Dtrue
+api%3Ffrom%3Deng%26dest%3Dspa%26format%3Djson%26phrase%3Dhello%26pretty%3Dtrue
+api%3Ffrom%3Deng%26dest%3Dspa%26format%3Djson%26phrase%3Dhow%26pretty%3Dtrue
+api%3Ffrom%3Dpol%26dest%3Deng%26format%3Djson%26phrase%3Dwitaj%26pretty%3Dtrue
+```
+Open any of the saved responses in a text editor, make changes to the response data and restart the dictionary app. Note, that your modified translations are used instead of the actual API responses. That proves apimock works as it should and uses cached data instead of making calls to the underlying API.
