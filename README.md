@@ -163,6 +163,31 @@ will be saved as `api%3Fcall%3DgetUserDetails%26username%3Djohn.json`
 Naturally, each and every intercepted request is first compared (URL-encoded) to the stored filenames. Should a file be found, the request is dropped and the content of the file is returned as a response to the client.
 
 #### HTTP POST
+```
+  {
+      "url": "http://3rd-party-api.com",
+      "source": "/data",
+      "target": "/login",
+      "type": "application/json",
+      "method": "POST",
+      "postMap": ["username"]
+  }
+```
+In case of a POST requests, it's the request body which plays the dominant role. The content of the body is parsed and compared to the path specified by `postMap`. Example:
+
+Suppose, this is the POST request body
+```
+{  "username":"tom" }
+```
+and this is the corresponding configuration
+```
+"postMap": ["username"]
+```
+then, apimock knows it should look for the key called 'username' when inspecting the body and use the found value as well. Thus, it saves the relevant response as `username_tom.json`.
+
+Again, the next time the same request body is captured it is compared against the stored files. If the file called `username_tom.json` is found, the POST request is dropped and the file content is returned as a respponse to the client.
+
+Unlike GET requests, the POST handling requires a little bit of preparation, so that the postMap comprises correct paths.
 
 ## Examples
 ### HTTP GET
