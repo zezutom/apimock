@@ -1,0 +1,9 @@
+block content
+  if locals.user.valid
+    p Welcome #{user.details.firstName} #{user.details.lastName}
+    p Your balance is #{user.details.balance}
+    a(href="/") Log out
+  else
+    p #{user.username} not found
+    p
+      a(href="/") Try again

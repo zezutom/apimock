@@ -1,0 +1,552 @@
+
+> simple-login@0.0.1 start /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+> node ./bin/www
+
+
+TypeError: Cannot read property 'type' of undefined
+    at Request._callback (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/routes/index.js:14:46)
+    at self.callback (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:122:22)
+    at Request.EventEmitter.emit (events.js:95:17)
+    at ClientRequest.self.clientErrorHandler (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:231:10)
+    at ClientRequest.EventEmitter.emit (events.js:95:17)
+    at Socket.socketErrorListener (http.js:1547:9)
+    at Socket.EventEmitter.emit (events.js:95:17)
+    at net.js:440:14
+    at process._tickCallback (node.js:419:13)
+
+npm ERR! simple-login@0.0.1 start: `node ./bin/www`
+npm ERR! Exit status 8
+npm ERR! 
+npm ERR! Failed at the simple-login@0.0.1 start script.
+npm ERR! This is most likely a problem with the simple-login package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls simple-login
+npm ERR! There is likely additional logging output above.
+npm ERR! System Darwin 13.1.0
+npm ERR! command "node" "/usr/local/bin/npm" "start"
+npm ERR! cwd /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+npm ERR! node -v v0.10.28
+npm ERR! npm -v 1.4.9
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/npm-debug.log
+npm ERR! not ok code 0
+
+> simple-login@0.0.1 start /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+> node ./bin/www
+
+
+npm ERR! simple-login@0.0.1 start: `node ./bin/www`
+npm ERR! Exit status 143
+npm ERR! 
+npm ERR! Failed at the simple-login@0.0.1 start script.
+npm ERR! This is most likely a problem with the simple-login package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls simple-login
+npm ERR! There is likely additional logging output above.
+npm ERR! System Darwin 13.1.0
+npm ERR! command "node" "/usr/local/bin/npm" "start"
+npm ERR! cwd /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+npm ERR! node -v v0.10.28
+npm ERR! npm -v 1.4.9
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/npm-debug.log
+npm ERR! not ok code 0
+
+> simple-login@0.0.1 start /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+> node ./bin/www
+
+
+TypeError: Cannot read property 'type' of undefined
+    at Request._callback (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/routes/index.js:14:46)
+    at Request.self.callback (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:122:22)
+    at Request.EventEmitter.emit (events.js:98:17)
+    at Request.<anonymous> (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:1019:14)
+    at Request.EventEmitter.emit (events.js:117:20)
+    at IncomingMessage.<anonymous> (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:970:12)
+    at IncomingMessage.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:919:16
+    at process._tickCallback (node.js:419:13)
+
+npm ERR! simple-login@0.0.1 start: `node ./bin/www`
+npm ERR! Exit status 8
+npm ERR! 
+npm ERR! Failed at the simple-login@0.0.1 start script.
+npm ERR! This is most likely a problem with the simple-login package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls simple-login
+npm ERR! There is likely additional logging output above.
+npm ERR! System Darwin 13.1.0
+npm ERR! command "node" "/usr/local/bin/npm" "start"
+npm ERR! cwd /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+npm ERR! node -v v0.10.28
+npm ERR! npm -v 1.4.9
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/npm-debug.log
+npm ERR! not ok code 0
+
+> simple-login@0.0.1 start /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+> node ./bin/www
+
+
+TypeError: Cannot read property 'type' of undefined
+    at Request._callback (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/routes/index.js:14:46)
+    at Request.self.callback (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:122:22)
+    at Request.EventEmitter.emit (events.js:98:17)
+    at Request.<anonymous> (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:1019:14)
+    at Request.EventEmitter.emit (events.js:117:20)
+    at IncomingMessage.<anonymous> (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:970:12)
+    at IncomingMessage.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:919:16
+    at process._tickCallback (node.js:419:13)
+
+npm ERR! simple-login@0.0.1 start: `node ./bin/www`
+npm ERR! Exit status 8
+npm ERR! 
+npm ERR! Failed at the simple-login@0.0.1 start script.
+npm ERR! This is most likely a problem with the simple-login package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls simple-login
+npm ERR! There is likely additional logging output above.
+npm ERR! System Darwin 13.1.0
+npm ERR! command "node" "/usr/local/bin/npm" "start"
+npm ERR! cwd /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+npm ERR! node -v v0.10.28
+npm ERR! npm -v 1.4.9
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/npm-debug.log
+npm ERR! not ok code 0
+
+> simple-login@0.0.1 start /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+> node ./bin/www
+
+
+npm ERR! simple-login@0.0.1 start: `node ./bin/www`
+npm ERR! Exit status 143
+npm ERR! 
+npm ERR! Failed at the simple-login@0.0.1 start script.
+npm ERR! This is most likely a problem with the simple-login package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls simple-login
+npm ERR! There is likely additional logging output above.
+npm ERR! System Darwin 13.1.0
+npm ERR! command "node" "/usr/local/bin/npm" "start"
+npm ERR! cwd /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+npm ERR! node -v v0.10.28
+npm ERR! npm -v 1.4.9
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/npm-debug.log
+npm ERR! not ok code 0
+
+> simple-login@0.0.1 start /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+> node ./bin/www
+
+
+npm ERR! simple-login@0.0.1 start: `node ./bin/www`
+npm ERR! Exit status 143
+npm ERR! 
+npm ERR! Failed at the simple-login@0.0.1 start script.
+npm ERR! This is most likely a problem with the simple-login package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls simple-login
+npm ERR! There is likely additional logging output above.
+npm ERR! System Darwin 13.1.0
+npm ERR! command "node" "/usr/local/bin/npm" "start"
+npm ERR! cwd /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+npm ERR! node -v v0.10.28
+npm ERR! npm -v 1.4.9
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/npm-debug.log
+npm ERR! not ok code 0
+
+> simple-login@0.0.1 start /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+> node ./bin/www
+
+
+TypeError: Cannot read property 'type' of undefined
+    at Request._callback (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/routes/index.js:14:46)
+    at Request.self.callback (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:122:22)
+    at Request.EventEmitter.emit (events.js:98:17)
+    at Request.<anonymous> (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:1019:14)
+    at Request.EventEmitter.emit (events.js:117:20)
+    at IncomingMessage.<anonymous> (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:970:12)
+    at IncomingMessage.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:919:16
+    at process._tickCallback (node.js:419:13)
+
+npm ERR! simple-login@0.0.1 start: `node ./bin/www`
+npm ERR! Exit status 8
+npm ERR! 
+npm ERR! Failed at the simple-login@0.0.1 start script.
+npm ERR! This is most likely a problem with the simple-login package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls simple-login
+npm ERR! There is likely additional logging output above.
+npm ERR! System Darwin 13.1.0
+npm ERR! command "node" "/usr/local/bin/npm" "start"
+npm ERR! cwd /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+npm ERR! node -v v0.10.28
+npm ERR! npm -v 1.4.9
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/npm-debug.log
+npm ERR! not ok code 0
+
+> simple-login@0.0.1 start /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+> node ./bin/www
+
+
+TypeError: Cannot read property 'type' of undefined
+    at Request._callback (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/routes/index.js:14:46)
+    at Request.self.callback (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:122:22)
+    at Request.EventEmitter.emit (events.js:98:17)
+    at Request.<anonymous> (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:1019:14)
+    at Request.EventEmitter.emit (events.js:117:20)
+    at IncomingMessage.<anonymous> (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:970:12)
+    at IncomingMessage.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:919:16
+    at process._tickCallback (node.js:419:13)
+
+npm ERR! simple-login@0.0.1 start: `node ./bin/www`
+npm ERR! Exit status 8
+npm ERR! 
+npm ERR! Failed at the simple-login@0.0.1 start script.
+npm ERR! This is most likely a problem with the simple-login package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls simple-login
+npm ERR! There is likely additional logging output above.
+npm ERR! System Darwin 13.1.0
+npm ERR! command "node" "/usr/local/bin/npm" "start"
+npm ERR! cwd /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+npm ERR! node -v v0.10.28
+npm ERR! npm -v 1.4.9
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/npm-debug.log
+npm ERR! not ok code 0
+
+> simple-login@0.0.1 start /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+> node ./bin/www
+
+
+TypeError: Cannot read property 'type' of undefined
+    at Request._callback (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/routes/index.js:14:46)
+    at Request.self.callback (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:122:22)
+    at Request.EventEmitter.emit (events.js:98:17)
+    at Request.<anonymous> (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:1019:14)
+    at Request.EventEmitter.emit (events.js:117:20)
+    at IncomingMessage.<anonymous> (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:970:12)
+    at IncomingMessage.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:919:16
+    at process._tickCallback (node.js:419:13)
+
+npm ERR! simple-login@0.0.1 start: `node ./bin/www`
+npm ERR! Exit status 8
+npm ERR! 
+npm ERR! Failed at the simple-login@0.0.1 start script.
+npm ERR! This is most likely a problem with the simple-login package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls simple-login
+npm ERR! There is likely additional logging output above.
+npm ERR! System Darwin 13.1.0
+npm ERR! command "node" "/usr/local/bin/npm" "start"
+npm ERR! cwd /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+npm ERR! node -v v0.10.28
+npm ERR! npm -v 1.4.9
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/npm-debug.log
+npm ERR! not ok code 0
+
+> simple-login@0.0.1 start /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+> node ./bin/www
+
+
+TypeError: Cannot read property 'type' of undefined
+    at Request._callback (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/routes/index.js:14:46)
+    at Request.self.callback (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:122:22)
+    at Request.EventEmitter.emit (events.js:98:17)
+    at Request.<anonymous> (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:1019:14)
+    at Request.EventEmitter.emit (events.js:117:20)
+    at IncomingMessage.<anonymous> (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:970:12)
+    at IncomingMessage.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:919:16
+    at process._tickCallback (node.js:419:13)
+
+npm ERR! simple-login@0.0.1 start: `node ./bin/www`
+npm ERR! Exit status 8
+npm ERR! 
+npm ERR! Failed at the simple-login@0.0.1 start script.
+npm ERR! This is most likely a problem with the simple-login package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls simple-login
+npm ERR! There is likely additional logging output above.
+npm ERR! System Darwin 13.1.0
+npm ERR! command "node" "/usr/local/bin/npm" "start"
+npm ERR! cwd /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+npm ERR! node -v v0.10.28
+npm ERR! npm -v 1.4.9
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/npm-debug.log
+npm ERR! not ok code 0
+
+> simple-login@0.0.1 start /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+> node ./bin/www
+
+
+TypeError: Cannot read property 'type' of undefined
+    at Request._callback (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/routes/index.js:14:46)
+    at Request.self.callback (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:122:22)
+    at Request.EventEmitter.emit (events.js:98:17)
+    at Request.<anonymous> (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:1019:14)
+    at Request.EventEmitter.emit (events.js:117:20)
+    at IncomingMessage.<anonymous> (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:970:12)
+    at IncomingMessage.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:919:16
+    at process._tickCallback (node.js:419:13)
+
+npm ERR! simple-login@0.0.1 start: `node ./bin/www`
+npm ERR! Exit status 8
+npm ERR! 
+npm ERR! Failed at the simple-login@0.0.1 start script.
+npm ERR! This is most likely a problem with the simple-login package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls simple-login
+npm ERR! There is likely additional logging output above.
+npm ERR! System Darwin 13.1.0
+npm ERR! command "node" "/usr/local/bin/npm" "start"
+npm ERR! cwd /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+npm ERR! node -v v0.10.28
+npm ERR! npm -v 1.4.9
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/npm-debug.log
+npm ERR! not ok code 0
+
+> simple-login@0.0.1 start /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+> node ./bin/www
+
+
+npm ERR! simple-login@0.0.1 start: `node ./bin/www`
+npm ERR! Exit status 143
+npm ERR! 
+npm ERR! Failed at the simple-login@0.0.1 start script.
+npm ERR! This is most likely a problem with the simple-login package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls simple-login
+npm ERR! There is likely additional logging output above.
+npm ERR! System Darwin 13.1.0
+npm ERR! command "node" "/usr/local/bin/npm" "start"
+npm ERR! cwd /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+npm ERR! node -v v0.10.28
+npm ERR! npm -v 1.4.9
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/npm-debug.log
+npm ERR! not ok code 0
+
+> simple-login@0.0.1 start /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+> node ./bin/www
+
+
+npm ERR! simple-login@0.0.1 start: `node ./bin/www`
+npm ERR! Exit status 143
+npm ERR! 
+npm ERR! Failed at the simple-login@0.0.1 start script.
+npm ERR! This is most likely a problem with the simple-login package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls simple-login
+npm ERR! There is likely additional logging output above.
+npm ERR! System Darwin 13.1.0
+npm ERR! command "node" "/usr/local/bin/npm" "start"
+npm ERR! cwd /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+npm ERR! node -v v0.10.28
+npm ERR! npm -v 1.4.9
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/npm-debug.log
+npm ERR! not ok code 0
+
+> simple-login@0.0.1 start /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+> node ./bin/www
+
+TypeError: Cannot read property 'server' of undefined
+    at Object.handle (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/routes/index.js:10:30)
+    at next_layer (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/node_modules/express/lib/router/route.js:103:13)
+    at Route.dispatch (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/node_modules/express/lib/router/route.js:107:5)
+    at /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/node_modules/express/lib/router/index.js:205:24
+    at Function.proto.process_params (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/node_modules/express/lib/router/index.js:269:12)
+    at next (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/node_modules/express/lib/router/index.js:199:19)
+    at next (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/node_modules/express/lib/router/index.js:176:38)
+    at /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/node_modules/body-parser/index.js:91:7
+    at IncomingMessage.onEnd (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/node_modules/body-parser/node_modules/raw-body/index.js:119:7)
+    at IncomingMessage.g (events.js:180:16)
+
+npm ERR! simple-login@0.0.1 start: `node ./bin/www`
+npm ERR! Exit status 143
+npm ERR! 
+npm ERR! Failed at the simple-login@0.0.1 start script.
+npm ERR! This is most likely a problem with the simple-login package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls simple-login
+npm ERR! There is likely additional logging output above.
+npm ERR! System Darwin 13.1.0
+npm ERR! command "node" "/usr/local/bin/npm" "start"
+npm ERR! cwd /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+npm ERR! node -v v0.10.28
+npm ERR! npm -v 1.4.9
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/npm-debug.log
+npm ERR! not ok code 0
+
+> simple-login@0.0.1 start /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+> node ./bin/www
+
+ReferenceError: authService is not defined
+    at Request._callback (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/routes/index.js:15:35)
+    at self.callback (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:122:22)
+    at Request.EventEmitter.emit (events.js:95:17)
+    at Request.self._buildRequest (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:342:39)
+    at Request.init (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:509:10)
+    at new Request (/Users/tom/workspace/nodejs/apimock/node_modules/request/request.js:98:8)
+    at request (/Users/tom/workspace/nodejs/apimock/node_modules/request/index.js:54:11)
+    at Function.request.post (/Users/tom/workspace/nodejs/apimock/node_modules/request/index.js:124:27)
+    at Object.handle (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/routes/index.js:11:17)
+    at next_layer (/Users/tom/workspace/nodejs/apimock/examples/simple-login/client/node_modules/express/lib/router/route.js:103:13)
+
+npm ERR! simple-login@0.0.1 start: `node ./bin/www`
+npm ERR! Exit status 143
+npm ERR! 
+npm ERR! Failed at the simple-login@0.0.1 start script.
+npm ERR! This is most likely a problem with the simple-login package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls simple-login
+npm ERR! There is likely additional logging output above.
+npm ERR! System Darwin 13.1.0
+npm ERR! command "node" "/usr/local/bin/npm" "start"
+npm ERR! cwd /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+npm ERR! node -v v0.10.28
+npm ERR! npm -v 1.4.9
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/npm-debug.log
+npm ERR! not ok code 0
+
+> simple-login@0.0.1 start /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+> node ./bin/www
+
+
+npm ERR! simple-login@0.0.1 start: `node ./bin/www`
+npm ERR! Exit status 143
+npm ERR! 
+npm ERR! Failed at the simple-login@0.0.1 start script.
+npm ERR! This is most likely a problem with the simple-login package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls simple-login
+npm ERR! There is likely additional logging output above.
+npm ERR! System Darwin 13.1.0
+npm ERR! command "node" "/usr/local/bin/npm" "start"
+npm ERR! cwd /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+npm ERR! node -v v0.10.28
+npm ERR! npm -v 1.4.9
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/npm-debug.log
+npm ERR! not ok code 0
+
+> simple-login@0.0.1 start /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+> node ./bin/www
+
+
+npm ERR! simple-login@0.0.1 start: `node ./bin/www`
+npm ERR! Exit status 143
+npm ERR! 
+npm ERR! Failed at the simple-login@0.0.1 start script.
+npm ERR! This is most likely a problem with the simple-login package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls simple-login
+npm ERR! There is likely additional logging output above.
+npm ERR! System Darwin 13.1.0
+npm ERR! command "node" "/usr/local/bin/npm" "start"
+npm ERR! cwd /Users/tom/workspace/nodejs/apimock/examples/simple-login/client
+npm ERR! node -v v0.10.28
+npm ERR! npm -v 1.4.9
+npm ERR! code ELIFECYCLE
+npm ERR! 
+npm ERR! Additional logging details can be found in:
+npm ERR!     /Users/tom/workspace/nodejs/apimock/examples/simple-login/client/npm-debug.log
+npm ERR! not ok code 0

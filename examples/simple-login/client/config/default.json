@@ -1,0 +1,24 @@
+{
+    "UserService": {
+        "host": "http://localhost",
+        "port": 8082,
+        "type": "application/json"
+    },
+    "Server": {
+        "host": "localhost",
+        "port": 8082
+    },
+    "Routes": [
+        {
+            "url": "http://localhost:8081/login",
+            "source": "/data",
+            "target": "/login",
+            "suffix": ".json",
+            "type": "application/json",
+            "method": "POST",
+            "postMap": [
+                "username"
+            ]
+        }
+    ]
+}
