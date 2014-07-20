@@ -9,6 +9,8 @@ Inspired by an excellent blogpost at [coderwall](https://coderwall.com/p/ss80vw)
 - [Get Started](#get-started)
 - [Usage](#usage)
 - [Examples](#examples)
+  - [HTTP GET](#http-get)
+  - [HTTP POST](#http-post)
 
 ## Features
 * handles GET and POST requests
