@@ -7,7 +7,9 @@ Inspired by an excellent blogpost at [coderwall](https://coderwall.com/p/ss80vw)
 
 - [Features](#features)
 - [Get Started](#get-started)
-- [Usage](#usage)
+- [Configuration](#configuration)
+  - [Server](#server)
+  - [Routes](#routes)
 - [Examples](#examples)
   - [HTTP GET](#http-get)
   - [HTTP POST](#http-post)
@@ -20,14 +22,131 @@ Inspired by an excellent blogpost at [coderwall](https://coderwall.com/p/ss80vw)
 
 ## Get Started
 1. Install Node.js [Node.js](http://nodejs.org)
-2. cd to apimock's root directory and run `npm start`
-
-## Usage
-1. Create a configuration file in a directory of your choice
-2. In your application replace links to 3rd-party API(s) with a url of the apimock, for ex.:  `http://localhost:8082`
-3. Start apimock:  `start.sh your_config_dir`
+2. cd to apimock's root directory and run `npm install`
+3. Create a configuration file in a directory of your choice
+4. In your application replace links to 3rd-party API(s) with a url of the apimock, for ex.:  `http://localhost:8082`
+5. Start apimock:  `start.sh your_config_dir`
 
 Done. All requests towards the 3rd-party API(s) are mediated via apimock. When an API call is made, apimock either returns a previously saved response, or proceeds with the request, captures and saves the API response.
+
+## Configuration
+In the configuration directory of your choice, create a file called `default.json`. Example:
+```
+{
+    "Server": {
+        "host": "localhost",
+        "port": 8082
+    },
+    "Routes": [
+        {
+            "url": "http://3rd-party-api.com",
+            "source": "/data",
+            "target": "/api",
+            "type": "application/json"
+        },
+        {
+            "url": "http://3rd-party-api.com",
+            "source": "/data",
+            "target": "/login",
+            "type": "application/json",
+            "method": "POST",
+            "postMap": ["username"]
+        },
+        {
+            "url": "http://3rd-party-api.com",
+            "source": "/data",
+            "target": "/account",
+            "type": "application/json",
+            "method": "POST",
+            "postMap": ["accountNumber"]
+        },
+        ...
+    ]
+}
+```
+As you can see the configuration file comprises two main sections `Server` and `Routes`. Let's talk about each in detail.
+### Server
+```
+{
+    "Server": {
+        "host": "localhost",
+        "port": 8082
+    } 
+    ...
+}
+```
+The `Server` determines the hostname and the port the apimock will be running on. 
+
+#### host
+Typically, you will want to run it locally, thus `localhost` or `127.0.0.1` will suffice. In certain cases you might want to run it on a dedicated server. For instance, when you use apimock as data storage for a larger test automation.
+
+#### port
+I typically have ports 8080 and 8081 occupied by some kind of a web server (Tomcat, Jetty etc.), so I made the port 8082 the default. Feel free to change it to whatever port number you are comfortable with.
+
+
+### Routes
+```
+{
+   ...
+    "Routes": [
+        {
+            "url": "http://3rd-party-api.com",
+            "source": "/data",
+            "target": "/api",
+            "type": "application/json"
+        },
+        {
+            "url": "http://3rd-party-api.com",
+            "source": "/data",
+            "target": "/login",
+            "type": "application/json",
+            "method": "POST",
+            "postMap": ["username"]
+        },
+        {
+            "url": "http://3rd-party-api.com",
+            "source": "/data",
+            "target": "/account",
+            "type": "application/json",
+            "method": "POST",
+            "postMap": ["accountNumber"]
+        },
+        ...
+    ]
+}
+```
+You can have as many routes as you want. It all depends on how many 3rd party APIs you connect to, and how each of them is used. There are essentially two types of routes: one type deals with HTTP GET whereas the other one is suited for HTTP POST. Let's take a look what both of route types have in common and then what makes them specific.
+
+#### Common Attributes
+```
+  {
+      "url": "http://3rd-party-api.com",
+      "source": "/data",
+      "target": "/api",
+      "type": "application/json",
+      "suffix": ".json"
+  }
+```
+A route is determined by at least four attributes: `url`, `source`, `target` and `type`. Optionally, you can also specify a `suffix`
+
+##### url
+Points to the 3rd-party API. That's the link being proxied by apimock. Anytime you make request towards apimock, and there is no cached response for your request just yet, apimock will connect to the actual API by using the specified link.
+
+##### source
+That's where the cached responses are being stored. Simply put, your data directory. Everything is stored as plained text, so go and explore the stored files. The best part is that those files are read on-the-fly, so you will see your changes instantly, i.e. as soon as you make the same request again.
+
+##### target
+This is the actual route, a relative link associated with the particular route settings. In our example, every time you make a HTTP GET request towards apimock, such as: `http://localhost:8082/api?call=getUserDetails&username=john`, the apimock knows that the actual API call translates to `http://3rd-party-api.com?call=getUserDetails&username=john`.
+
+##### type
+Specifies the response content type. That's important for correct data parsing and handling by the browser.
+
+##### suffix
+Makes part of the filename of each and every cached response in a form of a file suffix. For instance, knowing you deal with JSON format, it's a good idea to let the files be stored as '.json'.
+
+#### HTTP GET
+
+#### HTTP POST
 
 ## Examples
 ### HTTP GET
