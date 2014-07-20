@@ -145,6 +145,22 @@ Specifies the response content type. That's important for correct data parsing a
 Makes part of the filename of each and every cached response in a form of a file suffix. For instance, knowing you deal with JSON format, it's a good idea to let the files be stored as '.json'.
 
 #### HTTP GET
+GET responses are fully determined by the settings described above, i.e.:
+```
+  {
+      "url": "http://3rd-party-api.com",
+      "source": "/data",
+      "target": "/api",
+      "type": "application/json",
+      "suffix": ".json"
+  }
+```
+The remaining question is how are the captured responses actually saved. Well, it's very simple. The file name of any saved responses corresponds to the URL-encoded string of the relevant GET request. Example:
+
+A response to this request `http://localhost:8082/api?call=getUserDetails&username=john` 
+will be saved as `api%3Fcall%3DgetUserDetails%26username%3Djohn.json`
+
+Naturally, each and every intercepted request is first compared (URL-encoded) to the stored filenames. Should a file be found, the request is dropped and the content of the file is returned as a response to the client.
 
 #### HTTP POST
 
