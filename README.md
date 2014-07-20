@@ -3,7 +3,12 @@ A simple and easy-to-use http proxy. Does your project depend on 3rd party APIs?
 
 Inspired by an excellent blogpost at [coderwall](https://coderwall.com/p/ss80vw).
 
-[[toc]]
+## Contents
+
+- [Features](#features)
+- [Get Started](#get-started)
+- [Usage](#usage)
+- [Examples](#examples)
 
 ## Features
 * handles GET and POST requests
