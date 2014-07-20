@@ -10,6 +10,9 @@ Inspired by an excellent blogpost at [coderwall](https://coderwall.com/p/ss80vw)
 - [Configuration](#configuration)
   - [Server](#server)
   - [Routes](#routes)
+    - [Common Attributes](#common-attributes)
+    - [GET Handling](#get-handling)
+    - [POST Handling](#post-handling)
 - [Examples](#examples)
   - [HTTP GET](#http-get)
   - [HTTP POST](#http-post)
@@ -144,7 +147,7 @@ Specifies the response content type. That's important for correct data parsing a
 ##### suffix
 Makes part of the filename of each and every cached response in a form of a file suffix. For instance, knowing you deal with JSON format, it's a good idea to let the files be stored as '.json'.
 
-#### HTTP GET
+#### GET Handling
 GET responses are fully determined by the settings described above, i.e.:
 ```
   {
@@ -162,7 +165,7 @@ will be saved as `api%3Fcall%3DgetUserDetails%26username%3Djohn.json`
 
 Naturally, each and every intercepted request is first compared (URL-encoded) to the stored filenames. Should a file be found, the request is dropped and the content of the file is returned as a response to the client.
 
-#### HTTP POST
+#### POST Handling
 ```
   {
       "url": "http://3rd-party-api.com",
