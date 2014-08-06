@@ -301,19 +301,19 @@ apimock configuration:
 Notice the extra configuration options `"method": "POST"` and `"postMap": ["username"]`. These are essential for the correct response recording and matching. `"method": "POST"` makes the apimock aware of the fact that the settings relate to HTTP POST. Secondly, the `"postMap": ["username"]` suggests how to match the POST request body against cached files or how to store the received response if no match is found. Again, an example is worth a thousand words:
 
 1. The client submits a POST requests providing `tom` as username
-```json
-{  "username":"tom" }
-```
+  ```json
+  {  "username":"tom" }
+  ```
 2. The request is intercepted by apimock, which at this time has no corresponding data, so it let's the authentication service process the request
 
 3. The authentication service has no records about the user `tom` and returns therefore an error message:
-```json
-{  "username":"tom", "details":{}, "valid":false }
-```
-4. The response is captured by apimock and, in sync with the hint specified in the `postMap` setting, saves it as `username_tom.json`:
-```json
-{  "username":"tom", "details":{}, "valid":false }
-```
+  ```json
+  {  "username":"tom", "details":{}, "valid":false }
+  ```
+4. The response is captured by apimock and, in sync with the hint specified in the `postMap` setting, saves it as     `username_tom.json`:
+  ```json
+  {  "username":"tom", "details":{}, "valid":false }
+  ```
 From this point on, apimock will never go back to the authentication service to obtain details of that user. Instead, it replies back to the client with whatever is stored as `username_tom.json`. This way you can easily modify the persisted response and turn the error message into a fictional valid user:
 
 ~~{  "username":"tom", "details":{}, "valid":false }~~
