@@ -305,6 +305,7 @@ Notice the extra configuration options `"method": "POST"` and `"postMap": ["user
 {  "username":"tom" }
 ```
 2. The request is intercepted by apimock, which at this time has no corresponding data, so it let's the authentication service process the request
+
 3. The authentication service has no records about the user `tom` and returns therefore an error message:
 ```json
 {  "username":"tom", "details":{}, "valid":false }
