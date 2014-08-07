@@ -1,8 +1,10 @@
 var routes = require("config").Routes;
+var events = require("config").Events;
 var _ = require('underscore');
 var util = require('util');
 var cache = require("./cache");
 var common = require('./utils/common');
+var ioserver = require('./utils/ioserver');
 
 module.exports = function (app) {
 
@@ -11,6 +13,7 @@ module.exports = function (app) {
             _.each(routes, function(route) {
                 this.map(route);
             }, this);
+            ioserver().init(events);
         },
         saveRes: function(route, req, res, post) {
             cache(route, req, post).read(res);
@@ -28,4 +31,4 @@ module.exports = function (app) {
             }
         }
     }
-}
+};
