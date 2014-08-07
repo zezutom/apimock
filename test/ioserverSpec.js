@@ -8,19 +8,21 @@ var welcomeJson =  __dirname + "/mocks/api/push/welcome.json";
 var loginJson =  __dirname + "/mocks/api/push/login.json";
 
 var options = {
-    'transports': ['websocket']
+    'transports': ['websocket'],
+    'force new connection': true
 };
 
 var events = [
     {
-        "name": "join",
+        "name": "anonymous",
         "target": "welcome",
         "source": welcomeJson
     },
     {
         "name": "login",
         "source": loginJson,
-        "private": true
+        "private": true,
+        "recipient": "user"
     }
 ];
 
@@ -51,7 +53,8 @@ describe('I/O Server', function() {
                     throw err();
                 }
 
-                var data = JSON.stringify(file);
+                // parse + stringify guarantee the json will be compact
+                var data = JSON.stringify(JSON.parse(file));
 
                 if (path === welcomeJson) {
                     expectedWelcome = data;
@@ -73,7 +76,7 @@ describe('I/O Server', function() {
         var counter = 0;
 
         var assertData = function(data, client) {
-            expect(JSON.stringify(data)).equal(expectedWelcome);
+            expect(data).equal(expectedWelcome);
             counter++;
             client.disconnect();
         };
@@ -81,7 +84,7 @@ describe('I/O Server', function() {
         var client1 = clients[0];
 
         client1.on('connect', function() {
-            client1.emit('join', 'client1');
+            client1.emit('anonymous', 'client1');
         });
 
         _.each(clients, function(client) {
@@ -94,9 +97,23 @@ describe('I/O Server', function() {
         });
     });
 
-//    it('Should send a private stored response to the relevant client only', function(done) {
-//         // TODO
-//    });
+    it('Should send a private stored response to a single client only', function(done) {
 
+        var clients = [addClient(), addClient(), addClient()];
+        var client1 = clients[0];
+
+        client1.on('connect', function() {
+            client1.emit('login', 'client1');
+        });
+
+        _.each(clients, function(client) {
+            client.on('login', function(data) {
+                // only the authorized client should receive the private message
+                expect(client).to.eql(client1);
+                expect(data).equal(expectedLogin);
+                done();
+            });
+        });
+    });
 });
 
