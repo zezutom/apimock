@@ -1,0 +1,15 @@
+body { font-family: arial; font-size: 14px; }
+.page { padding: 1em; background-color: #EEEEDD; border: 1px solid #CCC; max-width: 655px; }
+.page input { font-family: Arial; }
+.page b { font-weight: bold; }
+.page p { margin-top: 0.9em; margin-bottom: 0.9em; }
+.page select[multiple] { width: 100%; height: 8em; }
+.page h2 { margin-top: 0.4em; }
+
+.quote-table { margin-bottom: 1em; width: 25em; border: 1px solid silver; background-color:White; }
+.quote-table th { text-align:left; background-color: Black; color:White; }
+.quote-table td, th { padding: 0.4em; }
+.quote-table tr:nth-child(odd) { background-color: #DDD; }
+.page { height:20em; overflow:auto } /* Mobile Safari reflows pages slowly, so fix the height to avoid the need for reflows */
+
+li { list-style-type: disc; margin-left: 20px; }

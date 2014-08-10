@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+    <title>Socket.IO Stock Trader</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script src="js/knockout-3.0.0.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<body>
+    <div class="page">
+        <table class="quote-table" data-bind="visible: stocks().length > 0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Bid</th>
+                    <th>Ask</th>
+                    <th>Volume</th>
+                    <th><select data-bind="options: selectionView.choices, value: selectionView.selectedChoice"> </select></th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: stocks">
+                <tr>
+                     <td><span data-bind="text: symbol"> </span></td>
+                     <td><span data-bind="text: formatPrice(bid())"> </span></td>
+                     <td><span data-bind="text: formatPrice(ask())"> </span></td>
+                     <td><span data-bind="text: formatVolume(volume())"> </span></td>
+                     <td><button data-bind="click: $parent.removeLine">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+<script>
+    // Socket.io - live data push
+    var socket = io();
+
+    // Knockout - model and bindings
+
+    function formatPrice(price) {
+        return (price) ? "$" + price.toFixed(2) : '-';
+    };
+
+    function formatVolume(volume) {
+        return (volume) ? volume : '-';
+    }
+
+    var GridModel = function(stocks) {
+        var self = this;
+        self.stocks = ko.observableArray(stocks);
+
+        self.selectionView = {
+            choices: ['AAPL', 'GOOG', 'YHOO'],
+            selectedChoice: ko.observable(undefined)
+        };
+
+        self.addStock = function(symbol) {
+
+            // prevent duplicates
+            for (var i = 0; i < self.stocks().length; i++) {
+                if (self.stocks()[i].symbol === symbol) {
+                    return;
+                }
+            }
+
+            // add to the grid
+            self.stocks.push(
+                    {
+                        symbol: symbol,
+                        bid: ko.observable(0),
+                        ask: ko.observable(0),
+                        volume: ko.observable(0)
+                    });
+            self.sortBySymbol();
+
+            // subscribe for notifications
+            socket.emit('subscribe', symbol);
+
+            // update grid view when a new quote arrives
+            socket.on('receive-quote', function(quote) {
+                var stocks = self.stocks();
+                for (var i = 0; i < stocks.length; i++) {
+                    var stock = stocks[i];
+                    if (stock.symbol === quote.symbol) {
+                        stock.bid(quote.bid);
+                        stock.ask(quote.ask);
+                        stock.volume(quote.volume);
+                        break;
+                    }
+                }
+            });
+
+        };
+
+        self.removeLine = function(line) {
+            self.stocks.remove(line);
+            socket.emit('unsubscribe', line.symbol);
+        };
+
+        self.sortBySymbol = function() {
+            self.stocks.sort(function(a, b) {
+                return a.symbol < b.symbol ? -1 : 1;
+            });
+        };
+    };
+
+    var gridModel = new GridModel([]);
+    gridModel.selectionView.selectedChoice.subscribe(function(newValue) {
+        gridModel.addStock(newValue);
+    });
+    ko.applyBindings(gridModel);
+
+    // add all of the known stocks to the table
+    var selectionView = gridModel.selectionView;
+    selectionView.choices.forEach(function(symbol) {
+        selectionView.selectedChoice(symbol);
+    });
+
+</script>
+
+</html>
