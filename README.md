@@ -1,3 +1,5 @@
+## This tool is deprecated. Please use [mockingbird](https://github.com/zezutom/mockingbird) instead.
+
 # apimock
 A simple and easy-to-use http proxy. Does your project depend on 3rd party APIs? Don't let your productivity suffer by frequent down times. Capture the responses, adjust them to your needs and off you go! Everything is stored as plain text files. Looking to automate your tests? Make them stable, predictable and completely independent from external data providers.
 
